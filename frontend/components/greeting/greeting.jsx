@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container'
 
 const Greeting = ({currentUser, logout}) => {
-  // debugger
   // if (currentUser) {
     return (
       <div>

@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import Dummy from './dummy';
 
 const mapStateToProps = ({ errors }) => {
   return {
@@ -19,5 +18,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Dummy);
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

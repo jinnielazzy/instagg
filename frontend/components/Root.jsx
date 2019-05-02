@@ -4,7 +4,6 @@ import App from './App';
 import { Provider } from 'react-redux';
 
 const Root = ({store}) => {
-  // debugger
   return (
     <Provider store={store}>
       <HashRouter>
