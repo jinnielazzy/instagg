@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.login-form-container a {
-  text-decoration: none;
+@font-face {
+  font-family: Billabong; 
+  src: url(billabong.eot), url(billabong.ttf) ;
 }
 
 .splash {
@@ -11,5 +12,63 @@
 }
 
 .login-form-container {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex: auto;
+  margin-top: 12px;
+  padding: 0;
+  border: 1px solid grey;
+}
+
+.login-form-box ul {
+  list-style-type: none;
+  color: red;
+  display: table;
+  margin: 0 auto;
+}
+
+.instagg-intro {
+  text-align: center;
+  color: #999;
+  margin: 0 40px 10px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.login-form-container input {
+  box-sizing: border-box;
+  width: 258px;
+  height: 36px;
+  padding: 9px 0 7px 8px;
+  outline: 0;
+}
+
+.login-form-container input[type=text] {
+  cursor: text;
+  margin: 0 40px 6px;
+}
+
+.login-form-container input[type=submit] {
+  cursor: pointer;
+  margin: 6px 40px 6px;
+  background-color: rgb(7, 110, 194);
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+
+.login-form-container a {
+  text-decoration: none;
+}
+
+.login-form-title {
+  font-family: billabong;
+  font-size: 50px;
+  height: 51px;
+}
+
+.form-footer-link {
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
 }

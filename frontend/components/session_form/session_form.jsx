@@ -38,15 +38,11 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <div className="form-picture">
-          <img src=""/>
-        </div>
         <h1 className='login-form-title'>Insta-gg</h1>
         <div className="instagg-intro">
           Sign up to see photos and videos from your friends.
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
           <div className="login-form">
             <br />
             <label className="login-form-input-username">
@@ -68,6 +64,7 @@ class SessionForm extends React.Component {
             <br />
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
+          {this.renderErrors()}
           <div className='form-footer-link'>
             {this.props.navLink}
           </div>

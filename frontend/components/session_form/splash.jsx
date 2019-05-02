@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class Splash extends React.Component {
   render() {
     return (
-      // <div className="splash">
       <>
         <div className="splash">
           <img src="image.png" className="splash-image"/>
