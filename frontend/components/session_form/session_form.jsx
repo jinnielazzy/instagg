@@ -11,17 +11,16 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    console.log("update");
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
   handleSubmit(e) {
-    console.log("handlesubmit")
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    // this route might change
+    this.props.processForm(user).then(() => this.props.history.push('/greeting'));
   }
 
   renderErrors() {
@@ -40,7 +39,6 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {/* Please {this.props.formType} or {this.props.navLink} */}
           {this.renderErrors()}
           <div className="login-form">
             <br />
@@ -49,7 +47,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-              />
+                />
             </label>
             <br />
             <label>Password:
@@ -57,10 +55,11 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              />
+                />
             </label>
             <br />
             <input className="session-submit" type="submit" value={this.props.formType} />
+            {this.props.navLink}
           </div>
         </form>
       </div>

@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.login = login;
   // window.logout = logout;
   // window.signup = signup;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   // tesing purpose
   
   ReactDOM.render(<Root store={store}/>, root)
