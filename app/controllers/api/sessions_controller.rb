@@ -18,6 +18,7 @@ class Api::SessionsController < ApplicationController
     # debugger
     if @user
       logout
+      render "api/users/show"
     else
       render json: ["not logged in"], status: 404
     end
