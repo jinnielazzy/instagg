@@ -8,7 +8,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
       <Component {...props} />
     ) : (
         <Redirect to="/greeting" />
-        // this should change into post url
+        // this should change to post url
       )
   }} />
 );

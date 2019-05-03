@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "./api/sessions.scss";
+ @import "./api/users.scss";
+ @import "static_pages.scss";

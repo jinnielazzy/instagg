@@ -26,15 +26,13 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     // this route might change
-    this.props.processForm(user).then(() => this.props.history.push('/greeting'));
+    // this.props.processForm(user).then((promise) => this.props.history.push('/greeting'));
+    this.props.processForm(user);
   }
 
   handleDemo(e) {
     e.preventDefault();
-    // if demo from '/', error shows, but still can go to the greeting
-    this.props.processDemo({username: "jinhua", password: "password"}).then((shit) => {
-      return this.props.history.push('/greeting')
-    });
+    this.props.processDemo({username: "ohyeah", password: "password"});
   }
 
   renderErrors() {
