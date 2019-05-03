@@ -31,7 +31,10 @@ class SessionForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    this.props.processDemo({username: "jinhua", password: "password"}).then(() => this.props.history.push('/greeting'));
+    // if demo from '/', error shows, but still can go to the greeting
+    this.props.processDemo({username: "jinhua", password: "password"}).then((shit) => {
+      return this.props.history.push('/greeting')
+    });
   }
 
   renderErrors() {
@@ -77,7 +80,7 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
-          <button className="demo-btn" onClick={this.props.handleDemo}>Demo Login</button>
+          <button className="demo-btn" onClick={this.handleDemo}>Demo Login</button>
           {this.renderErrors()}
         </div>
         <div className='form-footer-link'>
