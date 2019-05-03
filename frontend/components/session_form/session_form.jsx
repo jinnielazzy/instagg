@@ -47,12 +47,20 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let msg, welcome;
+    if (this.props.formType === 'Log in') {
+      msg = "Don't have an account?"
+    } else {
+      msg = "Have an account?"
+      welcome = "Sign up to see photos and videos from your friends."
+    }
+
     return (
       <div className="login-form-container">
         <div className='form-container'>
           <h1 className='login-form-title'>Insta-gg</h1>
           <div className="instagg-intro">
-            Sign up to see photos and videos from your friends.
+            {welcome}
           </div>
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-form">
@@ -81,7 +89,7 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
         </div>
         <div className='form-footer-link'>
-          {this.props.navLink}
+          <p>{msg} {this.props.navLink}</p>
         </div>
       </div>
     );

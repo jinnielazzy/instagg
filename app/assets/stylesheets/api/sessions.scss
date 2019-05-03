@@ -12,7 +12,7 @@
 }
 
 .login-form-container {
-  margin-top: 120px;
+  margin-top: inherit;
 }
 
 .form-container {
@@ -69,12 +69,9 @@
   color: white;
 }
 
-.login-form-container a {
-  text-decoration: none;
-  font-size: 17px;
-  font-family: sans-serif;
-  font-weight: 800;
-}
+// .login-form-container a {
+ 
+// }
 
 .login-form-title {
   font-family: billabong;
@@ -98,7 +95,12 @@
 }
 
 .form-footer-link {
-  margin: 12px 0 12px;
-  padding: 10px 0;
   border: 1px solid lightgrey;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+.form-footer-link a {
+  text-decoration: none;
+  font-weight: 600;
 }
