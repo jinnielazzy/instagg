@@ -8,11 +8,13 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
-  // componentDidMount() {
-  //   clear out the errors here
-  // }
+  componentDidMount() {
+    // clear out the errors here
+    this.props.removeErrors();
+  }
 
   update(field) {
     return e => this.setState({
@@ -27,11 +29,10 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(() => this.props.history.push('/greeting'));
   }
 
-  // handleDemo(e) {
-  //   e.preventDefault();
-  //   // this route might change
-  //   this.props.processDemo(user).then(() => this.props.history.push('/greeting'));
-  // }
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.processDemo({username: "jinhua", password: "password"}).then(() => this.props.history.push('/greeting'));
+  }
 
   renderErrors() {
     return (
@@ -48,35 +49,37 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <h1 className='login-form-title'>Insta-gg</h1>
-        <div className="instagg-intro">
-          Sign up to see photos and videos from your friends.
-        </div>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="login-form">
-            <br />
-            <label className="login-form-input-username">
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-                placeholder="Username"/>
-            </label>
-            <br />
-            <label className="login-form-input-password">
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="Password"
-                />
-            </label>
-            <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+        <div className='form-container'>
+          <h1 className='login-form-title'>Insta-gg</h1>
+          <div className="instagg-intro">
+            Sign up to see photos and videos from your friends.
           </div>
-          {/* <button onClick={this.props.handleDemo(user)} /> */}
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <div className="login-form">
+              <br />
+              <label className="login-form-input-username">
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                  placeholder="Username"/>
+              </label>
+              <br />
+              <label className="login-form-input-password">
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  placeholder="Password"
+                  />
+              </label>
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
+          </form>
+          <button className="demo-btn" onClick={this.props.handleDemo}>Demo Login</button>
           {this.renderErrors()}
-        </form>
+        </div>
         <div className='form-footer-link'>
           {this.props.navLink}
         </div>

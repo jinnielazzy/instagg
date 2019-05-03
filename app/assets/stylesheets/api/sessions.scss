@@ -12,15 +12,19 @@
 }
 
 .login-form-container {
+  margin-top: 120px;
+}
+
+.form-container {
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex: auto;
-  margin-top: 12px;
+  margin: 12px 0 12px;
   padding: 0;
   border: 1px solid lightgrey;
   max-width: 300px;
   background-color: white;
-  max-height: 450px;
+  max-height: 500px;
 }
 
 .login-form {
@@ -29,12 +33,13 @@
   align-items: center;
 }
 
-.login-form-box ul {
+.form-container ul {
+  margin: auto;
   list-style-type: none;
-  color: red;
+  color:#ff8080;
   display: table;
-  margin: 0 auto;
-  padding: 0;
+  padding: 20px 20px;
+  font-size: 12px;
 }
 
 .instagg-intro {
@@ -51,24 +56,24 @@
   height: 36px;
   padding: 9px 0 7px 8px;
   outline: 0;
-}
-
-.login-form-container input[type=text] {
   cursor: text;
   margin: 0 40px 6px;
 }
 
 .login-form-container input[type=submit] {
   cursor: pointer;
-  margin: 6px 40px 6px;
+  border-radius: 4px;
   background-color: #3897f0;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   color: white;
 }
 
 .login-form-container a {
   text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+  font-weight: 800;
 }
 
 .login-form-title {
@@ -77,8 +82,23 @@
   height: 51px;
 }
 
+.demo-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #3897f0;
+  color: white;
+  width: 258px;
+  height: 36px;
+  font-size: 17px;
+}
+
+.demo-btn:hover {
+  background: white;
+  color: #3897f0;
+}
+
 .form-footer-link {
-  border-radius: 1px;
-  margin: 0 0 10px;
+  margin: 12px 0 12px;
   padding: 10px 0;
+  border: 1px solid lightgrey;
 }
