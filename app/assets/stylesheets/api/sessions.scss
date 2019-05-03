@@ -12,7 +12,7 @@
 }
 
 .login-form-container {
-  margin-top: inherit;
+  margin-top: 30px;
 }
 
 .form-container {
@@ -24,7 +24,8 @@
   border: 1px solid lightgrey;
   max-width: 300px;
   background-color: white;
-  max-height: 500px;
+  max-height: 550px;
+  height: 500px;
 }
 
 .login-form {
@@ -73,6 +74,10 @@
  
 // }
 
+.login-form-input-password {
+  margin-bottom: 20px;
+}
+
 .login-form-title {
   font-family: billabong;
   font-size: 50px;
@@ -87,6 +92,7 @@
   width: 258px;
   height: 36px;
   font-size: 17px;
+  margin-top: 25px;
 }
 
 .demo-btn:hover {
