@@ -1,0 +1,6 @@
+1. I tried to set the root page as '/' by using ProtectRoute to force user to login. 
+However, it ran into an infinite loop, where it kept looping within frontend 
+route '/' and '/login' routes. 
+2. I created a demo login in session_form, and when I tried Demo Login from the 
+root "/", error showed up, and state looked strange; yet, it could redirect to 
+greeting page.

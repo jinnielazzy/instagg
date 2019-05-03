@@ -15,6 +15,7 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         {/* maybe take out signup */}
         <AuthRoute path="/signup" component={SignupFormContainer} />
+        {/* this might be the post url, post component you are rendering */}
         <ProtectedRoute path="/greeting" component={GreetingContainer}/>
       </Switch>
     </div>
