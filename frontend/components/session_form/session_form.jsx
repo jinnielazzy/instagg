@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    // clear out the errors here
     this.props.removeErrors();
   }
 
