@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import PostIndex from './post_index';
 
 const mapStateToProps = ({session, entities: { users }}) => {
   return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
