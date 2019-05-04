@@ -20,8 +20,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   # build the association later 
-  #  add associations here
-  # 
+  #  has_many -> posts, user creates
+  #  has_many -> posts, user follows
 
   def self.find_by_credentials(username, password) 
     user = User.find_by(username: username) 
