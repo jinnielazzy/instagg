@@ -4,6 +4,15 @@ class Api::PostsController < ApplicationController
     # should not be all posts, only the posts current_user follows
     render :index
   end
+  
+  def show
+    @post = Post.find_by(id: params[:id])
+    if @post
+      render :show
+    else
+      render json: ["Post Not Found"], status: 404
+    end
+  end
 
   def create
     @post = Post.new(post_params)
@@ -26,21 +35,11 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
     if @post && @post.destroy
       render json: {}, status: 200
     else
       render json: ['Not found'], status: 404
-    end
-  end
-
-  def show
-    @post = Post.find(params[:id])
-
-    if @post
-      render :show
-    else
-      render json: @image.errors.full_messages, status: 404
     end
   end
 
