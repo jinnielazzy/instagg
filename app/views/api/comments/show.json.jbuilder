@@ -1,0 +1,1 @@
+# comment's user_id, body, post_id
