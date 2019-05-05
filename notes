@@ -4,3 +4,6 @@ route '/' and '/login' routes.
 2. I created a demo login in session_form, and when I tried Demo Login from the 
 root "/", error showed up, and state looked strange; yet, it could redirect to 
 greeting page.
+3. I forgot to add "bio" column in users model, and I made new migration adding 
+it to users table. And did json.extract! on bio column. Somehow, it still worked
+locally, but in heroku, website broke down as heroku logs said, "bio" undefined

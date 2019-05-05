@@ -11,9 +11,9 @@
 #
 
 class Comment < ApplicationRecord
-  # TODO 
+  validates :body, presence: true
   # associations
-  
+
   belongs_to :user
   belongs_to :post
 end

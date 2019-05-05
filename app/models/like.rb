@@ -10,10 +10,7 @@
 #
 
 class Like < ApplicationRecord
-
-  # TODO 
   # associations
-  
-  belongs_to :post
   belongs_to :user            
+  belongs_to :post
 end

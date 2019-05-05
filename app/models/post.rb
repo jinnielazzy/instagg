@@ -16,6 +16,13 @@ class Post < ApplicationRecord
 
   # TODO 
   # associations
+  belongs_to :user
+  has_many :likes
+  has_many :comments
+  
+  has_many :likers,
+    through: :likes,
+    source: :user
 
   # def ensure_photo
   #   unless self.photo.attached? 
