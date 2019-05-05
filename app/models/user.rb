@@ -8,6 +8,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  bio             :string
 #
 
 class User < ApplicationRecord
@@ -19,9 +20,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # build the association later 
-  #  has_many -> posts, user creates
-  #  has_many -> posts, user follows
+  # TODO
+  # association
 
   def self.find_by_credentials(username, password) 
     user = User.find_by(username: username) 
