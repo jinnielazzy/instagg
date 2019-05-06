@@ -1,6 +1,6 @@
 @posts.each do |post|
   json.set! post.id do
-    json.extract! post, :id, :caption
+    json.extract! post, :id, :caption, :user_id
     json.photoUrl url_for(post.photo)
     # post's comments
     #  each comment creater, comment body
@@ -10,4 +10,4 @@
   # post's creater
   # post's like
   # post's url
-end
+end 

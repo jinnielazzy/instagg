@@ -6,7 +6,8 @@ class Upload extends React.Component {
     this.state = {
       user_id: this.props.currentUser.id,
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      body: ""
     }
 
     this.handleFile = this.handleFile.bind(this);
@@ -18,7 +19,7 @@ class Upload extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('post[body]', this.state.body);
+    formData.append('post[caption]', this.state.body);
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }

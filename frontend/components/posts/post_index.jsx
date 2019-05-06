@@ -17,8 +17,6 @@ class PostIndex extends React.Component {
     // debugger
     return (
       <div className="post-container">
-        <h1>Hi, {currentUser.username}</h1>
-        <button onClick={logout}>Log Out</button>
         <ul className="post-list">
           { 
             this.props.posts.map((post) => {

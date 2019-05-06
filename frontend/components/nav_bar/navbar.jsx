@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    // debugger
+  }
+
   render() {
+    // const currentUser = this.props.user
     return (
       <div className="navbar">
         <div className="logo">
@@ -15,7 +21,7 @@ class NavBar extends React.Component {
           <Link to="/upload">Upload</Link>
         </div>
         <div className="profile">
-          Profile
+          <Link to="/profile">Profile</Link>
         </div>
       </div>
     )
