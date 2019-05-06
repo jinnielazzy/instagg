@@ -5,21 +5,19 @@ import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './session_form/splash';
+import NavBarContainer from './nav_bar/navbar_container';
 
 const App = () => {
   return (
-    <div className="app-div">
-      <Switch>
+    <div className="app-container">
+      <ProtectedRoute path="/posts" component={NavBarContainer}/>
+      <div className="app-div">
         <AuthRoute exact path="/" component={Splash} />
-        {/* <AuthRoute exact path="/" component={SignupFormContainer} /> */}
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        {/* maybe take out signup */}
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        {/* this might be the post url, post component you are rendering */}
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/posts" component={PostContainer}/>
-        {/* this is for random routes, redirect to root*/}
-        <Redirect to='/'/>
-      </Switch>
+        {/* <Redirect to='/'/> */}
+      </div>
     </div>
   )
 }

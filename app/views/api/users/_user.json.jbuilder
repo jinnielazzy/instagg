@@ -1,5 +1,6 @@
-json.extract! user, :id, :username, :bio, :photo
+json.extract! user, :id, :username, :bio
 
+# dont forgot user's profile photo
 # user's posts
 #  each post, post_id, photourl, likers id, comments
 

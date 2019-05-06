@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container'
 
-const Greeting = ({currentUser, logout}) => {
+const PostIndex = ({currentUser, logout}) => {
   // if (currentUser) {
     return (
-      <div>
+      <div className="post-container">
         <h1>Hi, {currentUser.username}</h1>
         <button onClick={logout}>Log Out</button>
       </div>
@@ -22,4 +22,4 @@ const Greeting = ({currentUser, logout}) => {
   // }
 }
 
-export default Greeting;
+export default PostIndex;

@@ -55,7 +55,7 @@ class User < ApplicationRecord
     source: :follower
 
   has_many :following_posts,
-    thourgh: :followings,
+    through: :followings,
     source: :posts
 
   # TODO

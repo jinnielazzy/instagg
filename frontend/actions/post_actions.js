@@ -19,10 +19,10 @@ export const receicePost = post => {
   }
 }
 
-export const removePost = id => {
+export const removePost = post => {
   return {
     type: REMOVE_POST,
-    postId: postId
+    postId: post.id
   }
 }
 
