@@ -19,9 +19,10 @@ class PostIndex extends React.Component {
       <div className="post-container">
         <h1>Hi, {currentUser.username}</h1>
         <button onClick={logout}>Log Out</button>
-        <ul>
+        <ul className="post-list">
           { 
             this.props.posts.map((post) => {
+              // could pass in the comment here
               return <PostIndexItem key={post.id} post={post}/>
             }) 
           }

@@ -12,7 +12,7 @@ export const receiceAllPosts = posts => {
   }
 }
 
-export const receicePost = post => {
+export const receivePost = post => {
   return {
     type: RECEIVE_POST,
     post: post

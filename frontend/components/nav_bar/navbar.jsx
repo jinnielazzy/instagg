@@ -12,7 +12,7 @@ class NavBar extends React.Component {
           <input type="search" placeholder="Search"/>
         </div>
         <div className="upload">
-          Upload
+          <Link to="/upload">Upload</Link>
         </div>
         <div className="profile">
           Profile

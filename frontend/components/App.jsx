@@ -6,6 +6,7 @@ import SignupFormContainer from './session_form/signup_form_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './session_form/splash';
 import NavBarContainer from './nav_bar/navbar_container';
+import UploadContainer from './posts/upload_container';
 
 const App = () => {
   return (
@@ -18,8 +19,8 @@ const App = () => {
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <ProtectedRoute path="/posts" component={PostContainer}/>
+          <ProtectedRoute path="/upload" component={UploadContainer} />
           {/* EditPostContainer */}
-          {/* UploadContainer */}
           {/* UserProfileContainer */}
           {/* EditUserProfileContainer */}
           <Redirect to='/'/>
