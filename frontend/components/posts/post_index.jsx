@@ -1,25 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginFormContainer from '../session_form/login_form_container'
+import PostIndexItem from './post_index_item';
 
-const PostIndex = ({currentUser, logout}) => {
-  // if (currentUser) {
+class PostIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // this updates the state
+    return this.props.fetchPosts();
+  }
+
+  render() {
+    // debugger
+    const { currentUser, logout } = this.props;
+    // debugger
     return (
       <div className="post-container">
         <h1>Hi, {currentUser.username}</h1>
         <button onClick={logout}>Log Out</button>
+        <ul>
+          { 
+            this.props.posts.map((post) => {
+              return <PostIndexItem key={post.id} post={post}/>
+            }) 
+          }
+        </ul>
       </div>
-  //   );
-  // } else {
-  //   return (
-  //     <div>
-  //       {/* <LoginFormContainer/> */}
-  //       <Link to="/login">Login</Link>
-  //       <br/>
-  //       <Link to="/signup">Sign Up</Link>
-  //     </div>
     )
-  // }
+  }
 }
 
 export default PostIndex;

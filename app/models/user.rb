@@ -58,8 +58,7 @@ class User < ApplicationRecord
     through: :followings,
     source: :posts
 
-  # TODO
-  # has_one_attached :photo
+  has_one_attached :photo
 
   def self.find_by_credentials(username, password) 
     user = User.find_by(username: username) 

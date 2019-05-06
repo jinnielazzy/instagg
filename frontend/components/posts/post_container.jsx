@@ -2,15 +2,20 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import PostIndex from './post_index';
 
-const mapStateToProps = ({session, entities: { users }}) => {
+// might re-consider the state 
+const mapStateToProps = (state, ownProps) => {
+  // debugger
   return {
-    currentUser: users[session.id]
+    posts: Object.values(state.entities.posts),
+    users: Object.values(state.entities.users),
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchPosts: () => dispatch(fetchPosts())
   };
 };
 

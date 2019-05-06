@@ -2,16 +2,31 @@
   display: flex;
   width: 100%;
   padding: 40px;
+  font-size: 30px;
+  background-color:#FAFAFA;
+  border-bottom: 3px solid grey;
 }
 
 .logo {
-  float:left;
+  margin: auto auto auto 200px;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.upload {
+  margin: auto;
 }
 
 .search {
-  margin: 0 300px 0 500px
+  margin: auto 100px auto 100px;
+}
+
+.search input {
+  width: 300px;
 }
 
 .profile {
-  margin-left: 80px;
+  margin: auto 300px auto 100px;
 }
