@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     if @user
+      # debugger
       render "api/users/show"
     else
       render json: ["User not found"], status: 404
@@ -21,6 +22,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
+      # debugger
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422

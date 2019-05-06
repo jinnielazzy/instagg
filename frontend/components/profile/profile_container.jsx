@@ -8,9 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   return ({
     currentUser: currentUser,
-    posts: Object.values(currentUser.posts),
-    followers: currentUser.followers,
-    followings: currentUser.followings,
+    posts: Object.values(currentUser.posts)
   })
 }
 

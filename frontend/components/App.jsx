@@ -22,8 +22,8 @@ const App = () => {
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <ProtectedRoute path="/posts" component={PostContainer}/>
           <ProtectedRoute path="/upload" component={UploadContainer} />
-          <ProtectedRoute path="/profile" component={UserProfileContainer}/>
           <ProtectedRoute path="/profile/edit" component={EditProfileContainer}/>
+          <ProtectedRoute path="/profile" component={UserProfileContainer}/>
           <Redirect to='/'/>
         </Switch>
       </div>

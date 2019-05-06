@@ -3,9 +3,8 @@ import { updateUser } from '../../actions/user_action';
 import EditProfile from './edit_profile';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
-
+    currentUser: state.entities.users[state.session.id]
   })
 }
 

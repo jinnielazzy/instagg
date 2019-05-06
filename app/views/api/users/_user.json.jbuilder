@@ -12,7 +12,7 @@ json.posts do
   end
 end
 
-# user's profile url
+json.profile url_for(user.photo)
 # user's followings
 json.followings user.followings
 json.followers user.followers
