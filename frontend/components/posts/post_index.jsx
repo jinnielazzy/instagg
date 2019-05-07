@@ -18,14 +18,12 @@ class PostIndex extends React.Component {
     // debugger
     return (
       <div className="post-container">
-        <ul className="post-list">
-          { 
-            this.props.posts.map((post) => {
-              // could pass in the comment here
-              return <PostIndexItem key={post.id} post={post}/>
-            }) 
-          }
-        </ul>
+        { 
+          this.props.posts.map((post) => {
+            // could pass in the comment here
+            return <PostIndexItem key={post.id} post={post}/>
+          }) 
+        }
       </div>
     )
   }

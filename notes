@@ -7,3 +7,4 @@ greeting page.
 3. I forgot to add "bio" column in users model, and I made new migration adding 
 it to users table. And did json.extract! on bio column. Somehow, it still worked
 locally, but in heroku, website broke down as heroku logs said, "bio" undefined
+4. Never show up the default profile

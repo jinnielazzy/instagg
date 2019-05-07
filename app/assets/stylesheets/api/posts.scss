@@ -1,3 +1,107 @@
 // Place all the styles related to the api::posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-container {
+  margin-top: 100px;
+  flex-direction: column;
+  padding-top: 0;
+  width: 35%
+}
+
+.post-item-container {
+  margin-bottom: 60px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  margin-left: -1px;
+  margin-right: -1px;
+  padding: 0;
+  // height: 600px;
+}
+
+.post-header {
+  display: flex;
+  height: 60px;
+  padding: 16px;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.post-author-profile {
+  margin-left: 25px;
+}
+
+.post-header img {
+  width: 50px;
+}
+
+.post-author-name {
+  margin-left: 30px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.post-main img {
+  width: 100%
+}
+
+.post-comment {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.post-comment-container {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-comment-container div {
+  margin-bottom: 5px;
+}
+
+.fa-heart {
+  padding-left: 16px;
+  display: flex;
+}
+
+.post-like-count {
+  margin-top: 4px;
+  padding-left: 16px;
+  display: flex;
+}
+
+.post-comment div {
+  padding-left: 16px;
+  display: flex;
+}
+
+.comment-form {
+  display: flex;
+  padding-left: 15px;
+  flex-grow: 1;
+  max-height: 80px;
+  width: 100%;
+}
+
+.comment-form-container textarea {
+  height: 17px;
+  border: 0;
+  color: #262626;
+  font-size: inherit;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  width: 100%;
+  max-height: 80px;
+}
+
+.comment-form-container button {
+  border: 0;
+  color: #3897f0;
+  display: inline;
+  padding: 0;
+  cursor: pointer;
+}

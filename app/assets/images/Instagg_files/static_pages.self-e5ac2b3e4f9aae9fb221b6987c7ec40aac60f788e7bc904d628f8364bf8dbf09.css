@@ -1,0 +1,12 @@
+/* line 5, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/static_pages.scss */
+body {
+  background-color: #FAFAFA;
+}
+
+/* line 9, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/static_pages.scss */
+.app-div {
+  margin-top: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

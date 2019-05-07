@@ -1,0 +1,55 @@
+/* line 5, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-container {
+  margin-top: 100px;
+  flex-direction: column;
+  padding-top: 0;
+  width: 35%;
+}
+
+/* line 12, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-item-container {
+  margin-bottom: 60px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  margin-left: -1px;
+  margin-right: -1px;
+  padding: 0;
+  height: 600px;
+}
+
+/* line 22, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-header {
+  display: flex;
+  height: 60px;
+  padding: 16px;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* line 31, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-author-profile {
+  margin-left: 25px;
+}
+
+/* line 35, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-header img {
+  width: 50px;
+}
+
+/* line 39, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-author-name {
+  margin-left: 30px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+/* line 45, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-main img {
+  width: 100%;
+}
+
+/* line 49, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/posts.scss */
+.post-comment {
+  display: flex;
+}

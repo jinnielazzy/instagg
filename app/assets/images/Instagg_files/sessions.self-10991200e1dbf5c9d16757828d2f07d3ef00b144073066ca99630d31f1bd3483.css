@@ -1,0 +1,128 @@
+@font-face {
+  font-family: Billabong;
+  src: url(/assets/billabong-dd21ae77ac4e754f02c5cec8483c067d2131c575df6b02ff5814dff18069fe24.ttf);
+}
+/* line 14, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form-container {
+  margin-top: 30px;
+}
+
+/* line 18, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-container {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex: auto;
+  margin: 12px 0 12px;
+  padding: 0;
+  border: 1px solid lightgrey;
+  max-width: 300px;
+  background-color: white;
+  max-height: 550px;
+  height: 500px;
+}
+
+/* line 31, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 37, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-container ul {
+  margin: auto;
+  list-style-type: none;
+  color: #ff8080;
+  display: table;
+  padding: 20px 20px;
+  font-size: 12px;
+}
+
+/* line 46, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.instagg-intro {
+  text-align: center;
+  color: #999;
+  margin: 0 40px 10px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+/* line 54, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form-container input {
+  box-sizing: border-box;
+  width: 258px;
+  height: 36px;
+  padding: 9px 0 7px 8px;
+  outline: 0;
+  cursor: text;
+  margin: 0 40px 6px;
+}
+
+/* line 64, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form-container input[type=submit] {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #3897f0;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+/* line 77, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form-input-password {
+  margin-bottom: 20px;
+}
+
+/* line 81, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.login-form-title {
+  font-family: billabong;
+  font-size: 50px;
+  height: 51px;
+}
+
+/* line 87, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.demo-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #3897f0;
+  color: white;
+  width: 258px;
+  height: 36px;
+  font-size: 17px;
+  margin-top: 25px;
+}
+
+/* line 98, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.demo-btn:hover {
+  background: white;
+  color: #3897f0;
+}
+
+/* line 103, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-footer-link {
+  border: 1px solid lightgrey;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+/* line 109, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-footer-link a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #3897f0;
+}
+
+/* line 115, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-footer-link a:visited {
+  text-decoration: none;
+}
+
+/* line 119, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-footer-link a:hover {
+  text-decoration: none;
+}
+
+/* line 123, /Users/jinhua/Desktop/aaproject/instagg/app/assets/stylesheets/api/sessions.scss */
+.form-footer-link a:active {
+  text-decoration: none;
+}

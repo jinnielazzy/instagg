@@ -6,7 +6,7 @@ import { fetchSearchUsers } from '../../actions/user_action';
 const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
-    // searchUsers: Object.values(state.searchUsers)
+    searchUsers: Object.values(state.entities.searchUsers),
     user: state.currentUser
   };
 };

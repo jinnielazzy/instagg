@@ -20,26 +20,34 @@ class NavBar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // debugger
     // dispatch fetchQuery here, prevProps.searchedUsers array
+    // this.props.fetchSearchUsers(this.state.query);
+    // debugger
   }  
 
   render() {
     // const currentUser = this.props.user
+    // debugger
     return (
       <div className="navbar">
-        <div className="logo">
-          <Link to="/posts">Insta-gg</Link>
-        </div>
-        <div className="search">
-          <input type="search" placeholder="Search" onChange={this.handleSearch}/>
-          {/* render this.props.searchedUsers */}
-        </div>
-        <div className="upload">
-          <Link to="/upload">Upload</Link>
-        </div>
-        <div className="profile">
-          <Link to="/profile">Profile</Link>
+        <div className="navbar-container">
+          <div className="logo">
+            <Link to="/posts">Insta-gg</Link>
+          </div>
+          <div className="search">
+            <input type="search" placeholder="Search" onChange={this.handleSearch}/>
+            {/* render this.props.searchedUsers */}
+          </div>
+          <div className="function-container">
+            <div className="function">
+              <div className="upload">
+                <Link to="/upload"><img src='upload.png' /></Link>
+              </div>
+              <div className="profile">
+                <Link to="/profile"><img src='user.png' /></Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
