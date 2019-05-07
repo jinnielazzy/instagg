@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { fetchPosts } from '../../actions/post_actions';
 import PostIndex from './post_index';
+import { fetchAllUsers } from '../../actions/user_action';
 
 // might re-consider the state 
 const mapStateToProps = (state, ownProps) => {
@@ -13,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  // debugger
   return {
     logout: () => dispatch(logout()),
     fetchPosts: () => dispatch(fetchPosts())

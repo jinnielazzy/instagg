@@ -6,6 +6,7 @@ import { login, logout, signup } from './actions/session_actions';
 import { fetchPosts, fetchPost } from './actions/post_actions';
 import configureStore from './store/store';
 import Root from './components/Root';
+import { fetchSearchUsers } from './actions/user_action';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -38,8 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.fetchPost = POSTAPIUtil.fetchPost;
   // window.updatePost = POSTAPIUtil.updatePost;
   // window.deletePost = POSTAPIUtil.deletePost;
-  window.fetchPosts = fetchPosts;
-  window.fetchPost = fetchPost;
+  // window.fetchPosts = fetchPosts;
+  // window.fetchPost = fetchPost;
+  window.fetchSearchUsers = fetchSearchUsers;
   // tesing purpose
   
   ReactDOM.render(<Root store={store}/>, root)

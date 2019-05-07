@@ -12,7 +12,12 @@ json.posts do
   end
 end
 
-json.profile url_for(user.photo)
+if user.photo.attached?
+  json.profile url_for(user.photo)
+else
+  json.profile ""
+end
+
 # user's followings
 json.followings user.followings
 json.followers user.followers

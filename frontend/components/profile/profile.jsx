@@ -7,10 +7,6 @@ class Profile extends React.Component {
     // debugger
   }
 
-  componentDidMount() {
-    // this.props.fetchUser(this.props.currentUser.id);
-  }
-
   render() {
     const { currentUser, posts, logout } = this.props;
     // debugger

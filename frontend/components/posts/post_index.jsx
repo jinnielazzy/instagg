@@ -8,7 +8,8 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     // this updates the state
-    return this.props.fetchPosts();
+    // debugger
+    this.props.fetchPosts();
   }
 
   render() {

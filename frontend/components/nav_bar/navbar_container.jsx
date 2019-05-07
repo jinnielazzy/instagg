@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
 import NavBar from './navbar';
 import { logout } from '../../actions/session_actions';
+import { fetchSearchUsers } from '../../actions/user_action';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   return {
-    users: state.entities.users,
-    currentUser: state.entities.users[state.session.id]
+    // searchUsers: Object.values(state.searchUsers)
+    user: state.currentUser
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchSearchUsers: (query) => dispatch(fetchSearchUsers(query))
   };
 };
 

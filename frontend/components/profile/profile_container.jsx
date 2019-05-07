@@ -6,9 +6,10 @@ import { logout } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   // debugger
   const currentUser = state.entities.users[state.session.id];
+  const posts = (currentUser.posts) ? Object.values(currentUser.posts) : [];
   return ({
     currentUser: currentUser,
-    posts: Object.values(currentUser.posts)
+    posts: posts
   })
 }
 

@@ -49,7 +49,7 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : <img src="user.png"/>;
 
     return (
       <div className="edit-profile-container">
