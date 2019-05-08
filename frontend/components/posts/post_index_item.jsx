@@ -13,10 +13,10 @@ class PostIndexItem extends React.Component {
         <header className="post-header">
           {/* this whole thing could be a link */}
           <div className="post-author-profile">
-            <img src='user.png'/>
+            <img src={post.author.profile}/>
           </div>
           <div className="post-author-name">
-            post author
+            {post.author.username}
           </div>
         </header>
         <div className="post-main">
@@ -25,11 +25,11 @@ class PostIndexItem extends React.Component {
         <div className="post-comment-container">
           <i className="fas fa-heart"></i>
           <div className="post-like-count">
-            0 likes
+            {post.likes.length} likes
           </div>
           <div className="post-comment">
             <div className="post-caption">
-              caption here
+              {post.caption}
             </div>
             <div className="post-comment-text">
               comments here

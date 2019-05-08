@@ -22,7 +22,7 @@
 .post-header {
   display: flex;
   height: 60px;
-  padding: 16px;
+  padding: 0;
   align-items: center;
   flex-direction: row;
   border-bottom: 1px solid #e6e6e6;
@@ -33,11 +33,13 @@
 }
 
 .post-header img {
-  width: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .post-author-name {
-  margin-left: 30px;
+  margin-left: 20px;
   font-size: 20px;
   font-family: sans-serif;
 }
@@ -78,6 +80,11 @@
   display: flex;
 }
 
+.comment-form-container {
+  display: flex;
+  padding: 10px;
+}
+
 .comment-form {
   display: flex;
   padding-left: 15px;
@@ -99,6 +106,7 @@
 }
 
 .comment-form-container button {
+  font-size: 13px;
   border: 0;
   color: #3897f0;
   display: inline;

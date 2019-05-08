@@ -7,27 +7,45 @@ class Profile extends React.Component {
     // debugger
   }
 
+  componentDidMount() {
+    debugger
+    if (this.props.match.params.id !== undefined) {
+      this.props.fetchUser(this.props.match.params.id)
+    }
+  }
+
   render() {
-    const { currentUser, posts, logout } = this.props;
     // debugger
+    const { posts, logout } = this.props;
+    let user;
+    if (this.props.match.params.id !== undefined) {
+      user = this.props.user;
+    } else {
+      user = this.props.currentUser;
+    }
+
+    // debugger
+    
+    if (user === undefined) return null;
+    
     return (
       <div className="profile-container">
         <div className="header">
           <div className="header-container">
             <div className="profile-img">
-              <img src={currentUser.profile}/>
+              <img src={user.profile}/>
             </div>
             <div className="profile-info">
               <div className="profile-edit">
-                <h1>{currentUser.username}</h1>
+                <h1>{user.username}</h1>
                 <Link to="/profile/edit">Edit Profile</Link>
               </div>
               <div className="profile-follows">
-                <span>12 posts</span>
-                <span>{currentUser.followers.length} followers</span>
-                <span>{currentUser.followings.length} followings</span>
+                <span>{posts.length} posts</span>
+                <span>{user.followers.length} followers</span>
+                <span>{user.followings.length} followings</span>
               </div>
-              <div className="bio">{currentUser.bio}</div>
+              <div className="bio">{user.bio}</div>
             </div>
             <div className="logout-btn">
               <button onClick={logout}>Log Out</button>

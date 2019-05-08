@@ -28,6 +28,9 @@ class NavBar extends React.Component {
   render() {
     // const currentUser = this.props.user
     // debugger
+
+    if (!this.props.user) return null;
+    
     return (
       <div className="navbar">
         <div className="navbar-container">

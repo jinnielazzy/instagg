@@ -2,12 +2,16 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_action';
 import { createFollow, deleteFollow } from '../../actions/follow_action';
 import UserProfile from './user_profile';
+import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  const user = state.entities.users[ownProps.match.params.id] || {};
+  const user = state.entities.users[ownProps.match.params.id];
+  const posts = user && user.posts ? Object.values(user.posts) : [];
+  debugger
   return ({
     user: user,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    posts: posts
   })
 }
 
@@ -19,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

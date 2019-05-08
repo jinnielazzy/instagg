@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="app-container">
       {/* Modal */}
-      <ProtectedRoute component={NavBarContainer}/>
+      <NavBarContainer />
       <div className="app-div">
         <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} />
