@@ -4,28 +4,30 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => {
+    // debugger
     return !loggedIn ? (
       <Component {...props} />
     ) : (
         <Redirect to="/posts" />
-        // this should change to post url
       )
   }} />
 );
 
 const Protected = ({ component: Component, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => {
+    // debugger
     return loggedIn ? (
       <Component {...props} />
     ) : (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       ) 
   }} />
 );
 
-const mapStateToProps = state => (
-  { loggedIn: Boolean(state.session.id) }
-);
+const mapStateToProps = state => {
+  // debugger
+  return { loggedIn: Boolean(state.session.id) }
+};
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));

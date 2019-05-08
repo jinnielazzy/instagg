@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "./edit_profile.scss";
+ @import "./profile.scss";
  @import "./navbar.scss";
  @import "./api/posts.scss";
  @import "./api/sessions.scss";

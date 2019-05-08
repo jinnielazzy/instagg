@@ -55,14 +55,25 @@ class EditProfile extends React.Component {
       <div className="edit-profile-container">
         <h1>Edit Profile</h1>
         <form className="edit-form" onSubmit={this.handleSubmit}>
-          {preview}
-          <label>Profile: 
-            <input type="file" onChange={this.handleFile}/>
-          </label>
-          <label>Bio:
-            <textarea onChange={this.handleBio} cols="30" rows="10"></textarea>
-          </label>
-          <input type="submit"/>
+          <div className="edit-profile-img">
+            <div className="img">
+              {preview}
+            </div>
+            <div className="img-input">
+              <input type="file" onChange={this.handleFile}/>
+            </div>
+          </div>
+          <div className="edit-profile-bio">
+            <div className="bio">
+              <label for="bio-update">Bio</label>
+            </div>
+            <div className="bio-input">
+              <textarea onChange={this.handleBio} id="bio-update"></textarea>
+            </div>
+          </div>
+          <div className="submit-btn">
+            <input type="submit"/>
+          </div>
         </form>
       </div>
     )

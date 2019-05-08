@@ -1,0 +1,41 @@
+.edit-profile-img {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.img {
+  margin-right: 90px;
+}
+
+.img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.edit-profile-bio {
+  display: flex;
+  flex-direction: row;
+}
+
+.bio {
+  vertical-align: baseline;
+  padding-right: 32px;
+  margin-right: 134px;
+}
+
+.bio-input textarea {
+  height: 60px;
+  padding: 6px 10px;
+  resize: vertical;
+  line-height: 18px;
+}
+
+.submit-btn {
+  background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+    color: #fff;
+    position: relative;
+}

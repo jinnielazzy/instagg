@@ -3,6 +3,8 @@ import { logout } from '../../actions/session_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import PostIndex from './post_index';
 import { fetchAllUsers } from '../../actions/user_action';
+import { deleteLike, createLike } from '../../actions/like_action';
+import { createComment, deleteComment } from '../../actions/comment_action';
 
 // might re-consider the state 
 const mapStateToProps = (state, ownProps) => {
@@ -18,7 +20,11 @@ const mapDispatchToProps = (dispatch) => {
   // debugger
   return {
     logout: () => dispatch(logout()),
-    fetchPosts: () => dispatch(fetchPosts())
+    fetchPosts: () => dispatch(fetchPosts()),
+    createLike: (like) => dispatch(createLike(like)),
+    deleteLike: () => dispatch(deleteLike()),
+    createComment: (comment) => dispatch(createComment(comment)),
+    deleteComment: () => dispatch(deleteComment())
   };
 };
 

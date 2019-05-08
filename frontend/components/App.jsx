@@ -15,17 +15,17 @@ const App = () => {
   return (
     <div className="app-container">
       {/* Modal */}
-      <ProtectedRoute path="/posts" component={NavBarContainer}/>
+      <ProtectedRoute component={NavBarContainer}/>
       <div className="app-div">
         <Switch>
-          <AuthRoute exact path="/" component={Splash} />
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <AuthRoute exact path="/" component={Splash} />
           <ProtectedRoute path="/posts" component={PostContainer}/>
           <ProtectedRoute path="/upload" component={UploadContainer} />
           <ProtectedRoute path="/profile/edit" component={EditProfileContainer}/>
           <ProtectedRoute path="/profile" component={ProfileContainer}/>
-          {/* <ProtectedRoute path="/users/:id" component={UserProfileContainer}/> */}
+          <ProtectedRoute path="/users/:id" component={UserProfileContainer}/>
           <Redirect to='/'/>
         </Switch>
       </div>

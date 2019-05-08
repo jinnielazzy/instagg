@@ -4,9 +4,10 @@ import { createFollow, deleteFollow } from '../../actions/follow_action';
 import UserProfile from './user_profile';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  const user = state.entities.users[ownProps.match.params.id] || {};
   return ({
-    // user: state.entities.users[ownProps.match.params[id]]
+    user: user,
+    currentUser: state.entities.users[state.session.id]
   })
 }
 
