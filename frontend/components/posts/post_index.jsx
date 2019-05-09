@@ -12,20 +12,32 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+  // renderComments(id) {
+  //   this.props.comments.map(comment => {
+  //     if (comment.post_id === id) {
+  //       return (
+  //         <span>{comment.body}</span>
+  //       )
+  //     }
+  //   })
+  // }
+
   render() {
     // debugger
+    const posts = this.props.posts;
+  
     return (
       <div className="post-container">
-        { 
-          this.props.posts.map((post) => {
-            // could pass in the comment here
-            return <PostIndexItem key={post.id} 
-            post={post} 
-            deleteComment={this.props.deleteComment}
-            createComment={this.props.createComment}
-            createLike={this.props.createLike}
-            deleteLike={this.props.deleteLike}/>
-          }) 
+        {   
+          posts.map((post) => {
+            return <PostIndexItem 
+            post={post}
+            createComment={this.props.createComment} 
+            deleteComment={this.props.deleteComment} 
+            createLike={this.props.createLike} 
+            deleteLike={this.props.deleteLike} 
+            key={post.id} />
+          })       
         }
       </div>
     )

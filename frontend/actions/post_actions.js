@@ -6,6 +6,7 @@ export const REMOVE_POST = "REMOVE_POST";
 export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 
 export const receiceAllPosts = posts => {
+  // debugger
   return {
     type: RECEIVE_ALL_POSTS,
     posts: posts

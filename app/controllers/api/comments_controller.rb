@@ -1,4 +1,9 @@
 class Api::CommentsController < ApplicationController
+  def index   
+    @comments = Comment.where(post_id: params[:post_id])
+    render :index
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id

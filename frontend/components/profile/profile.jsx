@@ -15,6 +15,13 @@ class Profile extends React.Component {
       this.props.fetchUser(this.props.currentUser.id);
     }
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    // debugger
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.props.fetchUser(this.props.match.params.id)
+    }
+  }
   
   renderBtns() {
     // debugger
@@ -23,7 +30,7 @@ class Profile extends React.Component {
         <Link to="/profile/edit">Edit Profile</Link>
       )
     } else {
-      debugger
+      // debugger
       const followers = this.props.follows.map(follower => follower.follower_id);
       if (followers.includes(this.props.currentUser.id)) {
         return (

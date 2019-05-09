@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentContainer from '../comments/comment_container';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -18,8 +19,8 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
     const post = this.props.post;
+    // debugger
     return (
       <div className="post-item-container">
         <header className="post-header">
@@ -37,20 +38,14 @@ class PostIndexItem extends React.Component {
         <div className="post-comment-container">
           <i className="fas fa-heart" onClick={() => this.props.createLike({ post_id: post.id})}></i>
           <div className="post-like-count">
-            {post.likes.length} likes
+            {/* {post.likes.length} likes */}
           </div>
           <div className="post-comment">
             <div className="post-caption">
               {post.caption}
             </div>
             <div className="post-comment-text">
-              {
-                post.comments.map((comment) => {
-                  return (
-                    <span>{comment.body}</span>
-                  )
-                })
-              }
+              <CommentContainer post={post}/>
             </div>
           </div>
           <div className="comment-form-container">
