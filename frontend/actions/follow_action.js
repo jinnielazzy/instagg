@@ -4,6 +4,7 @@ export const RECEIVE_FOLLOW = "RECEIVE_FOLLOW";
 export const REMOVE_FOLLOW = "REMOVE_FOLLOW";
 
 export const receiveFollow = follow => {
+  debugger
   return {
     type: RECEIVE_FOLLOW,
     follow: follow
@@ -11,9 +12,10 @@ export const receiveFollow = follow => {
 };
 
 export const removeFollow = follow => {
+  debugger
   return {
     type: REMOVE_FOLLOW,
-    followId: follow.id
+    follow: follow
   }
 };
 
@@ -24,5 +26,7 @@ export const createFollow = follow => dispatch => {
 
 export const deleteFollow = id => dispatch => {
   return FollowAPIUtil.deleteFollow(id).then(
-    (follow) => dispatch(removeFollow(follow)))
+    (follow) => {
+      dispatch(removeFollow(follow))
+    })
 }

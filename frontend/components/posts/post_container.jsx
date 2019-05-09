@@ -8,7 +8,7 @@ import { createComment, deleteComment } from '../../actions/comment_action';
 
 // might re-consider the state 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  debugger
   return {
     posts: Object.values(state.entities.posts),
     users: Object.values(state.entities.users),
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     logout: () => dispatch(logout()),
     fetchPosts: () => dispatch(fetchPosts()),
     createLike: (like) => dispatch(createLike(like)),
-    deleteLike: () => dispatch(deleteLike()),
+    deleteLike: (like) => dispatch(deleteLike(like)),
     createComment: (comment) => dispatch(createComment(comment)),
-    deleteComment: () => dispatch(deleteComment())
+    deleteComment: (comment) => dispatch(deleteComment(comment))
   };
 };
 

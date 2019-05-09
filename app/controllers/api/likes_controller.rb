@@ -14,7 +14,7 @@ class Api::LikesController < ApplicationController
     @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
     if @like 
       @like.destroy
-      render json: {}, status: 200
+      render :show
     else
       render json: ["Can't unlike"], status: 401
     end

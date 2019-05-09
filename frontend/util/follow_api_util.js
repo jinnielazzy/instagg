@@ -1,7 +1,7 @@
 export const createFollow = follow => {
   return $.ajax({
     url: `api/follows`,
-    method: "PATCH",
+    method: "POST",
     data: { follow }
   })
 }

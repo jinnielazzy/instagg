@@ -1,8 +1,8 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = Post.all
+    # @posts = Post.all
     # should not be all posts, only the posts current_user follows
-    # @posts = current_user.following_posts
+    @posts = current_user.following_posts
     render :index
   end
   
@@ -41,7 +41,7 @@ class Api::PostsController < ApplicationController
     # should be current_user's posts
     # @post = current_user.posts.find(params[:id])
     if @post.destroy
-      render json: {}, status: 200
+      render :show
       # might be render sth else
     else
       render json: ['Post Not found'], status: 404

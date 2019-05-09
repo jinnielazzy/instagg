@@ -14,7 +14,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find_by(id: params[:id])
     if @comment 
       @comment.destroy
-      render json: {}, status: 200
+      render :show
     else
       render json: ["Can't uncomment"], status: 401
     end

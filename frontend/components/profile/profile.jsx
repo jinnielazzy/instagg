@@ -8,9 +8,32 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     if (this.props.match.params.id !== undefined) {
-      this.props.fetchUser(this.props.match.params.id)
+      this.props.fetchUser(this.props.match.params.id);
+    } else {
+      this.props.fetchUser(this.props.currentUser.id);
+    }
+  }
+  
+  renderBtns() {
+    // debugger
+    if (this.props.user.id === this.props.currentUser.id) {
+      return (
+        <Link to="/profile/edit">Edit Profile</Link>
+      )
+    } else {
+      debugger
+      const followers = this.props.follows.map(follower => follower.follower_id);
+      if (followers.includes(this.props.currentUser.id)) {
+        return (
+          <button onClick={() => this.props.deleteFollow(this.props.user.id)}>Following</button>
+        )
+      } else {
+        return (
+          <button onClick={() => this.props.createFollow({ user_id: this.props.user.id})}>Follow</button>
+        )
+      }
     }
   }
 
@@ -27,7 +50,9 @@ class Profile extends React.Component {
     // debugger
     
     if (user === undefined) return null;
-    
+    const numFollowers = user.numFollowers ? user.numFollowers : 0;
+    const numFollowings = user.numFollowings ? user.numFollowings : 0;
+
     return (
       <div className="profile-container">
         <div className="header">
@@ -38,12 +63,12 @@ class Profile extends React.Component {
             <div className="profile-info">
               <div className="profile-edit">
                 <h1>{user.username}</h1>
-                <Link to="/profile/edit">Edit Profile</Link>
+                {this.renderBtns()}
               </div>
               <div className="profile-follows">
                 <span>{posts.length} posts</span>
-                <span>{user.followers.length} followers</span>
-                <span>{user.followings.length} followings</span>
+                <span>{numFollowers} followers</span>
+                <span>{numFollowings} followings</span>
               </div>
               <div className="bio">{user.bio}</div>
             </div>

@@ -5,13 +5,15 @@ import UserProfile from './user_profile';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  const user = state.entities.users[ownProps.match.params.id];
-  const posts = user && user.posts ? Object.values(user.posts) : [];
   debugger
+  const user = state.entities.users[ownProps.match.params.id];
+  const posts = user ? Object.values(state.entities.posts) : [];
+  const follows = Object.values(state.entities.follows);
   return ({
     user: user,
     currentUser: state.entities.users[state.session.id],
-    posts: posts
+    posts: posts,
+    follows: follows
   })
 }
 

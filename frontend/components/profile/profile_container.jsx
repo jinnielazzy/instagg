@@ -4,11 +4,12 @@ import { fetchUser } from '../../actions/user_action';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  debugger
   const currentUser = state.entities.users[state.session.id];
-  const posts = (currentUser.posts) ? Object.values(currentUser.posts) : [];
+  const posts = Object.values(state.entities.posts);
   return ({
     currentUser: currentUser,
+    user: currentUser,
     posts: posts
   })
 }

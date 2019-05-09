@@ -7,6 +7,7 @@ import { fetchPosts, fetchPost } from './actions/post_actions';
 import configureStore from './store/store';
 import Root from './components/Root';
 import { fetchSearchUsers } from './actions/user_action';
+import { createFollow, deleteFollow } from './actions/follow_action';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -16,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.currentUser) {
     const preloadedState = {
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: { [window.currentUser.user.id]: window.currentUser.user }
       },
-      session: { id: window.currentUser.id }
+      session: { id: window.currentUser.user.id }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
@@ -41,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.deletePost = POSTAPIUtil.deletePost;
   // window.fetchPosts = fetchPosts;
   // window.fetchPost = fetchPost;
-  window.fetchSearchUsers = fetchSearchUsers;
+  // window.fetchSearchUsers = fetchSearchUsers;
+  window.createFollow = createFollow;
+  window.deleteFollow = deleteFollow;
   // tesing purpose
   
   ReactDOM.render(<Root store={store}/>, root)
