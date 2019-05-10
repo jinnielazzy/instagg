@@ -8,3 +8,4 @@ greeting page.
 it to users table. And did json.extract! on bio column. Somehow, it still worked
 locally, but in heroku, website broke down as heroku logs said, "bio" undefined
 4. Never show up the default profile
+5. "demo account" doesn't update profile pic
