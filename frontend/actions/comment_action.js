@@ -12,7 +12,7 @@ export const receiveComments = comments => {
 }
 
 export const receiveComment = comment => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_COMMENT,
     comment: comment

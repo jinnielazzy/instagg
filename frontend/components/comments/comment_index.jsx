@@ -18,7 +18,7 @@ class CommentIndex extends React.Component {
     return (
       <>
         {/* <h1>{this.props.post.id}</h1> */}
-        <CommentIndexItem comments={comments}/>
+        <CommentIndexItem key={this.props.post.id} comments={comments}/>
       </>
     )
   }

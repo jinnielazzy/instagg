@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentContainer from '../comments/comment_container';
+import { toUnicode } from 'punycode';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -10,6 +11,11 @@ class PostIndexItem extends React.Component {
     }
 
     this.updateComment = this.updateComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchLikes(this.props.post.id);
   }
 
   updateComment(e) {
@@ -18,9 +24,30 @@ class PostIndexItem extends React.Component {
     })
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state);
+    this.setState({
+      body: ""
+    })
+  }
+
+  renderLikeBtn(likes, post) {
+    // debugger
+    const liker = likes.find(like => like.user_id === this.props.currentUser.id);
+    // console.log(liker);
+    if (liker) {
+      return <i className="fas fa-heart" onClick={() => this.props.deleteLike(liker)}></i>
+    } else {
+      return <i className="far fa-heart" onClick={() => this.props.createLike({ post_id: post.id })}></i>      
+    }
+  }
+
   render() {
     const post = this.props.post;
-    // debugger
+    const likes = this.props.likes.filter(like => like.post_id === post.id)
+
+    // console.log(post.id)
     return (
       <div className="post-item-container">
         <header className="post-header">
@@ -36,9 +63,9 @@ class PostIndexItem extends React.Component {
           <img src={post.photoUrl} />
         </div>
         <div className="post-comment-container">
-          <i className="fas fa-heart" onClick={() => this.props.createLike({ post_id: post.id})}></i>
+          {this.renderLikeBtn(likes, post)}
           <div className="post-like-count">
-            {/* {post.likes.length} likes */}
+            {post.likes} likes
           </div>
           <div className="post-comment">
             <div className="post-caption">
@@ -52,7 +79,7 @@ class PostIndexItem extends React.Component {
             <form className="comment-form">
               <textarea placeholder="Add a Comment" onChange={this.updateComment}></textarea>
             </form>
-            <button onClick={() => this.props.createComment(this.state)}>Post</button>
+            <button onClick={this.handleSubmit}>Post</button>
           </div>
         </div>
       </div>

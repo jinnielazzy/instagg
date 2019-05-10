@@ -1,3 +1,9 @@
+export const fetchLikes = id => {
+  return $.ajax({
+    url: `api/posts/${id}/likes`
+  })
+}
+
 export const createLike = like => {
   return $.ajax({
     url: `api/likes`,
@@ -6,9 +12,9 @@ export const createLike = like => {
   })
 }
 
-export const deleteLike = id => {
+export const deleteLike = like => {
   return $.ajax({
-    url: `api/likes/${id}`,
+    url: `api/likes/${like.id}`,
     method:"DELETE"
   })
 }

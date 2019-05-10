@@ -14,10 +14,10 @@ class CommentIndexItem extends React.Component {
             (comment) => {
               return (
                 <div className="comment">
-                  <div>
+                  <div className="comment-username">
                     {comment.username}
                   </div>
-                  <div>
+                  <div className="comment-body">
                     {comment.body}
                   </div>
                 </div>

@@ -7,35 +7,28 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    // this updates the state
-    // debugger
     this.props.fetchPosts();
   }
-
-  // renderComments(id) {
-  //   this.props.comments.map(comment => {
-  //     if (comment.post_id === id) {
-  //       return (
-  //         <span>{comment.body}</span>
-  //       )
-  //     }
-  //   })
-  // }
 
   render() {
     // debugger
     const posts = this.props.posts;
-  
+    const likes = this.props.likes;
+    const currentUser = this.props.currentUser;
+
     return (
       <div className="post-container">
         {   
           posts.map((post) => {
             return <PostIndexItem 
+            currentUser={currentUser}
             post={post}
+            likes={likes}
             createComment={this.props.createComment} 
             deleteComment={this.props.deleteComment} 
             createLike={this.props.createLike} 
             deleteLike={this.props.deleteLike} 
+            fetchLikes={this.props.fetchLikes}
             key={post.id} />
           })       
         }
