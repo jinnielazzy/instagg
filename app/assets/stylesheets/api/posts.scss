@@ -51,7 +51,7 @@
 .fa-heart {
   padding-left: 16px;
   display: flex;
-  font-size: 40px;
+  font-size: 35px;
   color: red;
   cursor: pointer;
 }
@@ -162,4 +162,13 @@
 
 .post-caption {
   margin-bottom: 5px;
+}
+
+.comment-username a {
+  text-decoration: none;
+}
+
+.comment-username a:visited {
+  text-decoration: none;
+  color: black;
 }

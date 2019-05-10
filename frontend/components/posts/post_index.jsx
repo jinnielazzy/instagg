@@ -11,7 +11,7 @@ class PostIndex extends React.Component {
   }
 
   render() {
-    const posts = this.props.posts;
+    const posts = this.props.posts.reverse();
     const likes = this.props.likes;
     const currentUser = this.props.currentUser;
 

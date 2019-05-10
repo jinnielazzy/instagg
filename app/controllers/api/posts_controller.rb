@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
     # should not be all posts, only the posts current_user follows
     @posts = current_user.following_posts
     @posts += current_user.posts
-    @posts = (@posts.sort_by &:created_at).reverse
+    # @posts = (@posts.sort_by &:created_at).reverse
     render :index
   end
   

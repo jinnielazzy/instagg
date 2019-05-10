@@ -47,7 +47,6 @@ class PostIndexItem extends React.Component {
     return (
       <div className="post-item-container">
         <header className="post-header">
-          {/* this whole thing could be a link */}
             <div className="post-author-profile">
               <Link to={`/users/${post.user_id}`}><img src={post.author.profile} /></Link>
             </div>
