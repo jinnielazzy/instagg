@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
   }
 
   componentDidMount() {
-    // debugger
     if (this.props.match.params.id !== undefined) {
       this.props.fetchUser(this.props.match.params.id);
     } else {
@@ -17,20 +15,18 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // debugger
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.props.fetchUser(this.props.match.params.id)
     }
   }
   
   renderBtns() {
-    // debugger
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <Link to="/profile/edit">Edit Profile</Link>
       )
     } else {
-      // debugger
+
       const followers = this.props.follows.map(follower => follower.follower_id);
       if (followers.includes(this.props.currentUser.id)) {
         return (
@@ -45,7 +41,6 @@ class Profile extends React.Component {
   }
 
   render() {
-    // debugger
     const { posts, logout } = this.props;
     let user;
     if (this.props.match.params.id !== undefined) {
@@ -54,7 +49,6 @@ class Profile extends React.Component {
       user = this.props.currentUser;
     }
 
-    // debugger
     
     if (user === undefined) return null;
     const numFollowers = user.numFollowers ? user.numFollowers : 0;

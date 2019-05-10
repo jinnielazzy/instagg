@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     this.state = {
       query: ""
     }
@@ -22,12 +21,10 @@ class NavBar extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     // dispatch fetchQuery here, prevProps.searchedUsers array
     // this.props.fetchSearchUsers(this.state.query);
-    // debugger
   }  
 
   render() {
     // const currentUser = this.props.user
-    // debugger
 
     if (!this.props.user) return null;
     

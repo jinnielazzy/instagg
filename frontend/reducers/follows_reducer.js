@@ -5,16 +5,13 @@ import { REMOVE_FOLLOW, RECEIVE_FOLLOW } from "../actions/follow_action";
 const followsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
-  // debugger
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, state, action.user.followers, action.user.followings)
+      return merge({}, action.user.followers, action.user.followings)
     case RECEIVE_FOLLOW:
-      // debugger
       return merge({}, state, {[action.follow.follow.id] : action.follow.follow})
     case REMOVE_FOLLOW:
       newState = merge({}, state);
-      // debugger
       delete newState[action.follow.follow.id];
       return newState;
     default:

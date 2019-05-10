@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     // this route might change
-    // this.props.processForm(user).then((promise) => this.props.history.push('/greeting'));
+    // this.props.processForm(user).then(() => this.props.history.push('/posts'));
     this.props.processForm(user);
   }
 

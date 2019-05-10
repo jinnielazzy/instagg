@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentContainer from '../comments/comment_container';
-import { toUnicode } from 'punycode';
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -33,7 +33,6 @@ class PostIndexItem extends React.Component {
   }
 
   renderLikeBtn(likes, post) {
-    // debugger
     const liker = likes.find(like => like.user_id === this.props.currentUser.id);
     // console.log(liker);
     if (liker) {
@@ -52,12 +51,12 @@ class PostIndexItem extends React.Component {
       <div className="post-item-container">
         <header className="post-header">
           {/* this whole thing could be a link */}
-        <div className="post-author-profile">
-            <img src={post.author.profile}/>
-          </div>
-          <div className="post-author-name">
-            {post.author.username}
-          </div>
+            <div className="post-author-profile">
+              <Link to={`/users/${post.user_id}`}><img src={post.author.profile} /></Link>
+            </div>
+            <div className="post-author-name">
+              {post.author.username}
+            </div>
         </header>
         <div className="post-main">
           <img src={post.photoUrl} />
@@ -77,7 +76,7 @@ class PostIndexItem extends React.Component {
           </div>
           <div className="comment-form-container">
             <form className="comment-form">
-              <textarea placeholder="Add a Comment" onChange={this.updateComment}></textarea>
+              <textarea placeholder="Add a Comment" value={this.state.body} onChange={this.updateComment}></textarea>
             </form>
             <button onClick={this.handleSubmit}>Post</button>
           </div>

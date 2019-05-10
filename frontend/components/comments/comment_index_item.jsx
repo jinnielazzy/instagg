@@ -6,25 +6,15 @@ class CommentIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
+    const comment = this.props.comment;
     return (
       <div className="comment-body-container">
-        {
-          this.props.comments.map(
-            (comment) => {
-              return (
-                <div className="comment">
-                  <div className="comment-username">
-                    {comment.username}
-                  </div>
-                  <div className="comment-body">
-                    {comment.body}
-                  </div>
-                </div>
-              )
-            }
-          )
-        }
+        <div className="comment-username">
+          {comment.username}
+        </div>
+        <div className="comment-body">
+          {comment.body}
+        </div>
       </div>
     )
   }

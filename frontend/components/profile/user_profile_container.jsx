@@ -5,7 +5,6 @@ import UserProfile from './user_profile';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   const user = state.entities.users[ownProps.match.params.id];
   const posts = user ? Object.values(state.entities.posts) : [];
   const follows = Object.values(state.entities.follows);

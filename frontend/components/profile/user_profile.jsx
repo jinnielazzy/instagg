@@ -3,22 +3,18 @@ import React from 'react';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchUser(this.props.match.params.id)
   }
 
   render() {
-    // debugger
     if (Object.values(this.props.user).length === 0) {
-      // debugger
+
       return <h1>hi</h1>;
     }
 
-    debugger
     const user = this.props.user;
     const posts = Object.values(user.posts);
     return (

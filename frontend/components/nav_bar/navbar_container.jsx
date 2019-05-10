@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 import { fetchSearchUsers } from '../../actions/user_action';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     searchUsers: Object.values(state.entities.searchUsers),
     user: state.session.id

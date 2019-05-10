@@ -8,7 +8,6 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
   
-    # debugger
     if @comment.save
       render :show
     else

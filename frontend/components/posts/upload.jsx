@@ -13,7 +13,6 @@ class Upload extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCaption = this.handleCaption.bind(this);
-    // debugger
   }
 
   handleSubmit(e) {

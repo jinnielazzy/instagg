@@ -9,7 +9,6 @@ class EditProfile extends React.Component {
       photoUrl: this.props.currentUser.profile
     }
     
-    // debugger
     this.handleBio = this.handleBio.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

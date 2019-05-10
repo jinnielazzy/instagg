@@ -6,7 +6,6 @@ import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_action";
 const postsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
-  // debugger
   switch (action.type) {
     case RECEIVE_USER:
       return merge({}, action.user.posts);
