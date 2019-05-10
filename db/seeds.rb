@@ -14,9 +14,22 @@ Follow.destroy_all
 Like.destroy_all
 
 user1 = User.create(username: 'lizbot', password: 'password', bio: 'this is lizbot')
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+user1.photo.attach(io: file, filename: 'profile.png')
+
 user2 = User.create(username: 'jinbot', password: 'password', bio: 'this is jinbot')
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+user2.photo.attach(io: file, filename: 'profile.png')
+
 user3 = User.create(username: 'ohyeah', password: 'password', bio: 'this is jinbot')
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+user3.photo.attach(io: file, filename: 'profile.png')
+
+
 user4 = User.create(username: 'fiona', password: 'password', bio: '')
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+user4.photo.attach(io: file, filename: 'profile.png')
+
 
 post1 = Post.create(caption: 'I LOVE USC!!', user_id: user1.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
