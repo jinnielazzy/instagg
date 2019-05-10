@@ -24,42 +24,50 @@ post1.photo.attach(io: file, filename: 'post1.png')
 # post1.save!
 
 post2 = Post.create(caption: 'I dont write caption', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/uzaquqjPfY6jq7n2i7qPNcxP")
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/uzaquqjPfY6jq7n2i7qPNcxP")
 post2.photo.attach(io: file, filename: 'post2.png')
 # # post2.save!
 
 post3 = Post.create(caption: '', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/jVB3JKrZTA9yikec5KGkntdR")
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/jVB3JKrZTA9yikec5KGkntdR")
 post3.photo.attach(io: file, filename: 'post3.png')
 # post3.save!
 
 post4 = Post.create(caption: 'HAHA', user_id: user2.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/pQD8qa9DhWCvbpUWK43JJh6a")
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/pQD8qa9DhWCvbpUWK43JJh6a")
 post4.photo.attach(io: file, filename: 'post4.png')
 # post4.save!
 
 post5 = Post.create(caption: '', user_id: user2.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
 post5.photo.attach(io: file, filename: 'post5.png')
 # # post5.save!
 
 post6 = Post.create(caption: '', user_id: user3.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/xQWowxfLJ3AHM1ARou58kUdU")
+file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/xQWowxfLJ3AHM1ARou58kUdU")
 post6.photo.attach(io: file, filename: 'post6.png')
 # post6.save!
 
 post7 = Post.create(caption: '666', user_id: user4.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
 post7.photo.attach(io: file, filename: 'post7.png')
 # post7.save!
 
 post8 = Post.create(caption: '', user_id: user4.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
 post8.photo.attach(io: file, filename: 'post8.png')
 # post8.save!
 
 post9 = Post.create(caption: '', user_id: user4.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+# file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
 post9.photo.attach(io: file, filename: 'post9.png')
 # post9.save!
 
