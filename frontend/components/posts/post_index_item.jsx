@@ -34,7 +34,6 @@ class PostIndexItem extends React.Component {
 
   renderLikeBtn(likes, post) {
     const liker = likes.find(like => like.user_id === this.props.currentUser.id);
-    // console.log(liker);
     if (liker) {
       return <i className="fas fa-heart" onClick={() => this.props.deleteLike(liker)}></i>
     } else {
@@ -45,8 +44,6 @@ class PostIndexItem extends React.Component {
   render() {
     const post = this.props.post;
     const likes = this.props.likes.filter(like => like.post_id === post.id)
-
-    // console.log(post.id)
     return (
       <div className="post-item-container">
         <header className="post-header">
