@@ -68,17 +68,20 @@ class PostIndexItem extends React.Component {
           </div>
           <div className="post-comment">
             <div className="post-caption">
-              {post.caption}
+              <span className="username">{post.author.username}</span>
+              <span className="caption">{post.caption}</span>
             </div>
             <div className="post-comment-text">
               <CommentContainer post={post}/>
             </div>
           </div>
           <div className="comment-form-container">
-            <form className="comment-form">
-              <textarea placeholder="Add a Comment" value={this.state.body} onChange={this.updateComment}></textarea>
-            </form>
-            <button onClick={this.handleSubmit}>Post</button>
+            <div className="comment-form">
+              <form>
+                <textarea placeholder="Add a Comment" value={this.state.body} onChange={this.updateComment}></textarea>
+              </form>
+              <button onClick={this.handleSubmit}>Post</button>
+            </div>
           </div>
         </div>
       </div>

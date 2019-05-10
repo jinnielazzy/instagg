@@ -51,21 +51,9 @@
 .fa-heart {
   padding-left: 16px;
   display: flex;
-}
-
-.post-like-count {
-  margin-top: 4px;
-  padding-left: 16px;
-  display: flex;
-}
-
-.post-caption {
-  margin-bottom: 5px;
-}
-
-.comment-body-container {
-  flex-direction: column;
-  padding: 0;
+  font-size: 40px;
+  color: red;
+  cursor: pointer;
 }
 
 .comment-body {
@@ -76,6 +64,16 @@
 .comment-form-container {
   display: flex;
   padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top: 1px solid #efefef;
+  color: #999;
+  flex-shrink: 0;
+  font-size: 14px;
+  align-items: stretch;
+  line-height: 18px;
+  justify-content: center;
+  position: relative;
 }
 
 .comment-form {
@@ -84,6 +82,18 @@
   flex-grow: 1;
   max-height: 80px;
   width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.comment-form form {
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
 }
 
 .comment-form-container textarea {
@@ -107,3 +117,49 @@
   cursor: pointer;
 }
 
+.post-comment {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-size: 15px;
+  margin-top: 10px;
+  font-family: sans-serif;
+}
+
+.post-comment div {
+  display: flex;
+}
+
+.post-comment-text {
+  flex-direction: column;
+}
+
+.post-comment-text div {
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.comment-body-container {
+  flex-direction: row;
+}
+
+.post-like-count {
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 4px;
+  padding-left: 16px;
+  display: flex;
+}
+
+.username {
+  font-weight: 540;
+}
+
+.caption {
+  font-weight: 100;
+  margin-left: 20px;
+}
+
+.post-caption {
+  margin-bottom: 5px;
+}
