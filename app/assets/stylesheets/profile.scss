@@ -1,8 +1,13 @@
+* {
+  box-sizing: border-box
+}
+
 .profile-container {
   box-sizing: content-box;
   padding: 60px 20px 0;
   flex-grow: 1;
   margin: 50px auto 30px;
+  font-size: 10px;
 }
 
 .header {
@@ -79,6 +84,29 @@
   font-family: sans-serif;
 }
 
+.user-posts-container {
+  max-width: 93.5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.user-posts {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  margin: -1rem -1rem;
+  padding-bottom: 3rem;
+}
+
 .post-img {
-  
+  position: relative;
+  flex: auto auto auto;
+}
+
+.post-img img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
