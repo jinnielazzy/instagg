@@ -26,7 +26,6 @@ class Profile extends React.Component {
         <Link to="/profile/edit">Edit Profile</Link>
       )
     } else {
-
       const followers = this.props.follows.map(follower => follower.follower_id);
       if (followers.includes(this.props.currentUser.id)) {
         return (
@@ -49,7 +48,6 @@ class Profile extends React.Component {
       user = this.props.currentUser;
     }
 
-    
     if (user === undefined) return null;
     const numFollowers = user.numFollowers ? user.numFollowers : 0;
     const numFollowings = user.numFollowings ? user.numFollowings : 0;
