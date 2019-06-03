@@ -11,7 +11,6 @@ class UserProfile extends React.Component {
 
   render() {
     if (Object.values(this.props.user).length === 0) {
-
       return <h1>hi</h1>;
     }
 

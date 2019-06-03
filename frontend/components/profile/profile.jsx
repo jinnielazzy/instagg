@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfilePost from './profile_post';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -79,11 +80,9 @@ class Profile extends React.Component {
         <div className="user-posts-container">
           <div className="user-posts">
             {
-              posts.map((post) => (
-                <div className="post-img">
-                  <img src={post.img_url} />
-                </div>
-              ))
+              posts.map((post) => 
+                <ProfilePost post={post} key={post.id}/>
+              )
             }
           </div>
         </div>
