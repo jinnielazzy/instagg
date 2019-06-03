@@ -2,6 +2,7 @@ import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_ac
 import { RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/user_action";
 import { merge } from 'lodash';
 import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_action";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const postsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -26,6 +27,8 @@ const postsReducer = (state = {}, action) => {
       newState = merge({}, state);
       newState[action.like.post_id].likes--;
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }

@@ -1,6 +1,7 @@
 import { RECEIVE_USER } from "../actions/user_action";
 import { merge } from 'lodash';
 import { REMOVE_FOLLOW, RECEIVE_FOLLOW } from "../actions/follow_action";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const followsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +15,8 @@ const followsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.follow.follow.id];
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return state;
   }

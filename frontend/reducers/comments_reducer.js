@@ -2,6 +2,7 @@ import { RECEIVE_ALL_POSTS } from "../actions/post_actions";
 import { RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_COMMENTS } from "../actions/comment_action";
 import merge from 'lodash/merge';
 import { RECEIVE_USER } from "../actions/user_action";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +16,8 @@ const commentsReducer = (state = {}, action) => {
     case REMOVE_COMMENT:
       return state;
     case RECEIVE_USER:
+      return {};
+    case LOGOUT_CURRENT_USER:
       return {};
     default:
       return state;
