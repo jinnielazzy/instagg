@@ -10,8 +10,7 @@
 #
 
 class Post < ApplicationRecord
-  # validate :ensure_photo
-
+  validate :ensure_photo
   has_one_attached :photo
 
   # TODO 
@@ -24,10 +23,10 @@ class Post < ApplicationRecord
     through: :likes,
     source: :user
 
-  # def ensure_photo
-  #   unless self.photo.attached? 
-  #     errors[:photo] << "must be attached"
-  #   end
-  # end
+  def ensure_photo
+    unless self.photo.attached? 
+      errors[:photo] << "must be attached"
+    end
+  end
 
 end

@@ -51,6 +51,18 @@ class Upload extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
@@ -62,6 +74,7 @@ class Upload extends React.Component {
           <input type="text" onChange={this.handleCaption} placeholder="Caption"/>
           <input type="submit"/>
         </form>
+        {this.renderErrors()}
       </div>
     )
   }

@@ -5,7 +5,9 @@ import { fetchUser } from '../../actions/user_action';
 import Upload from './upload';
 
 const mapStateToProps = (state, ownProps) => {
+  const errors = Object.values(state.errors.posts);
   return ({
+    errors: errors,
     currentUser: state.entities.users[state.session.id]
   })
 }
