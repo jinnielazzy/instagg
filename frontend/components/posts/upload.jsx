@@ -15,6 +15,10 @@ class Upload extends React.Component {
     this.handleCaption = this.handleCaption.bind(this);
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -23,7 +27,7 @@ class Upload extends React.Component {
       formData.append('post[photo]', this.state.photoFile);
     }
     this.props.createPost(formData)
-      .then(() => this.props.fetchUser(this.state.user_id))
+      // .then(() => this.props.fetchUser(this.state.user_id))
       .then(() => this.props.history.push('/posts'));
   }
 
@@ -53,13 +57,11 @@ class Upload extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
+        this.props.errors.map((error, i) => (
+          <div className="upload-post-error" key={`error-${i}`}>
+            <span>{error}</span>
+          </div>
+        ))
     );
   }
 
@@ -68,12 +70,21 @@ class Upload extends React.Component {
     return (
       <div className="create-post-container">
         <h1>Create a post</h1>
-        {preview}
-        <form onSubmit={this.handleSubmit}> 
-          <input type="file" onChange={this.handleFile}/>
-          <input type="text" onChange={this.handleCaption} placeholder="Caption"/>
-          <input type="submit"/>
-        </form>
+        <div className="preview-container">
+          {preview}
+        </div>
+        <div className="post-form-container">
+          <form className="post-form" onSubmit={this.handleSubmit}> 
+            <div className="file-input">
+              <input type="file" id="file" onChange={this.handleFile}/>
+              <label htmlFor="file" className="btn">upload picture</label>
+            </div>
+            <div className="text-input">
+              <input type="text" onChange={this.handleCaption} placeholder="Add your caption..."/>
+            </div>
+            <input className="submit-btn" type="submit"/>
+          </form>
+        </div>
         {this.renderErrors()}
       </div>
     )

@@ -69,6 +69,6 @@ export const deletePost = (id) => dispatch => {
 }
 
 // not sure if needed in re-rendering component
-// export const removeErrors = () => dispatch => {
-//   return dispatch(receivePostErrors([]))
-// }
+export const removeErrors = () => dispatch => {
+  return dispatch(receivePostErrors([]))
+}
