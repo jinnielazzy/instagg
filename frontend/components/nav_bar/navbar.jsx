@@ -41,10 +41,10 @@ class NavBar extends React.Component {
           <div className="function-container">
             <div className="function">
               <div className="upload">
-                <Link to="/upload"><img src='upload.png' /></Link>
+                <Link to="/upload"><span className="fas fa-cloud-upload-alt"></span></Link>
               </div>
               <div className="profile">
-                <Link to="/profile"><img src='user.png' /></Link>
+                <Link to="/profile"><span className="far fa-user"></span></Link>
               </div>
             </div>
           </div>

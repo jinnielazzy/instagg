@@ -49,30 +49,24 @@ class EditProfile extends React.Component {
 
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : <img src='user.png'/>;
-
     return (
       <div className="edit-profile-container">
-        <h1>Edit Profile</h1>
         <form className="edit-form" onSubmit={this.handleSubmit}>
           <div className="edit-profile-img">
             <div className="img">
               {preview}
             </div>
             <div className="img-input">
-              <input type="file" onChange={this.handleFile}/>
+              <input type="file" id="file" onChange={this.handleFile}/>
+              <label htmlFor="file" className="btn">upload profile</label>
             </div>
           </div>
           <div className="edit-profile-bio">
-            <div className="bio">
-              <label for="bio-update">Bio</label>
-            </div>
             <div className="bio-input">
-              <textarea onChange={this.handleBio} id="bio-update"></textarea>
+              <textarea onChange={this.handleBio} id="bio-update" placeholder="Update your bio..."></textarea>
             </div>
           </div>
-          <div className="submit-btn">
-            <input type="submit"/>
-          </div>
+          <input className="submit-btn" type="submit" value="Update It" />
         </form>
       </div>
     )
