@@ -14,7 +14,7 @@ Follow.destroy_all
 Like.destroy_all
 
 user1 = User.create(username: 'lizbot', password: 'password', bio: 'this is lizbot')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/zHY2rYbiPANxRRh8SZnWRLYg")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post1.jpg")
 user1.photo.attach(io: file, filename: 'profile.png')
 
 user2 = User.create(username: 'jinbot', password: 'password', bio: 'this is jinbot')
@@ -22,7 +22,7 @@ file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifaf
 user2.photo.attach(io: file, filename: 'profile.png')
 
 user3 = User.create(username: 'ohyeah', password: 'password', bio: 'this is jinbot')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/zU9HCgWNLkkvuoM3wxcsNuqf")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post10.jpg")
 user3.photo.attach(io: file, filename: 'profile.png')
 
 user4 = User.create(username: 'chris', password: 'password', bio: 'I love coding')
@@ -53,105 +53,130 @@ user10 = User.create(username: 'Nikola', password: 'password', bio: 'Im pretty d
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/pcqRQvd2csDEoFFYEiyyHYiz")
 user10.photo.attach(io: file, filename: 'profile.png')
 
-post1 = Post.create(caption: 'Street food!!', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/5szmwPBmH1rw5NjvQ8UDACXF")
+post1 = Post.new(caption: 'Street food!!', user_id: user1.id)
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post10.jpg")
 post1.photo.attach(io: file, filename: 'post1.png')
+post1.save
 
-post2 = Post.create(caption: 'SO AWESOME, I GOT IT', user_id: user1.id)
+post2 = Post.new(caption: 'SO AWESOME, I GOT IT', user_id: user1.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/mHd33ZNRaEoxQAUw6fidhXoV")
 post2.photo.attach(io: file, filename: 'post2.png')
+post2.save
 
-post3 = Post.create(caption: '', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/PpdQXbNiCwkG4NcsbUXhpQJP")
+post3 = Post.new(caption: '', user_id: user1.id)
+file = open("https://shuttr-dev-seeds.s3-us-west-1.amazonaws.com/seamaster.jpg")
 post3.photo.attach(io: file, filename: 'post3.png')
+post3.save
 
-post4 = Post.create(caption: 'ROSE ROSE', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/EfSVmTTG2rupQBGHQNtfSiS9")
+post4 = Post.new(caption: 'ROSE ROSE', user_id: user1.id)
+file = open("https://shuttr-dev-seeds.s3-us-west-1.amazonaws.com/tent.jpg")
 post4.photo.attach(io: file, filename: 'post4.png')
+post4.save
 
-post5 = Post.create(caption: 'Come and visit, Im in USC', user_id: user1.id)
+post5 = Post.new(caption: 'Come and visit, Im in USC', user_id: user1.id)
 file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
 post5.photo.attach(io: file, filename: 'post5.png')
+post5.save
 
-post6 = Post.create(caption: 'Fowlers!!', user_id: user2.id)
+post6 = Post.new(caption: 'Fowlers!!', user_id: user2.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post1.jpg")
 post6.photo.attach(io: file, filename: 'post6.png')
+post6.save
 
-post7 = Post.create(caption: 'Cutie!!!', user_id: user2.id)
+post7 = Post.new(caption: 'Cutie!!!', user_id: user2.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post2.jpg")
 post7.photo.attach(io: file, filename: 'post7.png')
+post7.save
 
-post8 = Post.create(caption: '', user_id: user2.id)
+post8 = Post.new(caption: '', user_id: user2.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post3.jpg")
 post8.photo.attach(io: file, filename: 'post8.png')
+post8.save
 
-post9 = Post.create(caption: 'Lotus', user_id: user2.id)
+post9 = Post.new(caption: 'Lotus', user_id: user2.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post4.jpg")
 post9.photo.attach(io: file, filename: 'post9.png')
+post9.save
 
-post10 = Post.create(caption: '', user_id: user3.id)
+post10 = Post.new(caption: '', user_id: user3.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post5.jpg")
 post10.photo.attach(io: file, filename: 'post10.png')
+post10.save
 
-post11 = Post.create(caption: 'Sunset!!! So nice', user_id: user3.id)
+post11 = Post.new(caption: 'Sunset!!! So nice', user_id: user3.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post6.jpg")
 post11.photo.attach(io: file, filename: 'post11.png')
+post11.save
 
-post12 = Post.create(caption: 'Im in Japan', user_id: user3.id)
+post12 = Post.new(caption: 'Im in Japan', user_id: user3.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post7.jpg")
 post12.photo.attach(io: file, filename: 'post12.png')
+post12.save
 
-post13 = Post.create(caption: 'Vivid', user_id: user4.id)
+post13 = Post.new(caption: 'Vivid', user_id: user4.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post8.jpg")
 post13.photo.attach(io: file, filename: 'post13.png')
+post13.save
 
-post14 = Post.create(caption: 'In New York', user_id: user4.id)
+post14 = Post.new(caption: 'In New York', user_id: user4.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post9.jpg")
 post14.photo.attach(io: file, filename: 'post14.png')
+post14.save
 
-post15 = Post.create(caption: '', user_id: user4.id)
+post15 = Post.new(caption: '', user_id: user4.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post10.jpg")
 post15.photo.attach(io: file, filename: 'post15.png')
+post15.save
 
-post16 = Post.create(caption: '', user_id: user5.id)
+post16 = Post.new(caption: '', user_id: user5.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post11.jpg")
 post16.photo.attach(io: file, filename: 'post16.png')
+post16.save
 
-post17 = Post.create(caption: '', user_id: user5.id)
+post17 = Post.new(caption: '', user_id: user5.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post12.jpg")
 post17.photo.attach(io: file, filename: 'post17.png')
+post17.save
 
-post18 = Post.create(caption: '', user_id: user5.id)
+post18 = Post.new(caption: '', user_id: user5.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post13.jpg")
 post18.photo.attach(io: file, filename: 'post18.png')
+post18.save
 
-post19 = Post.create(caption: '', user_id: user6.id)
+post19 = Post.new(caption: '', user_id: user6.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post14.jpg")
 post19.photo.attach(io: file, filename: 'post19.png')
+post19.save
 
-post20 = Post.create(caption: '', user_id: user6.id)
+post20 = Post.new(caption: '', user_id: user6.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post15.jpg")
 post20.photo.attach(io: file, filename: 'post20.png')
+post20.save
 
-post21 = Post.create(caption: '', user_id: user6.id)
+post21 = Post.new(caption: '', user_id: user6.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post16.jpg")
 post21.photo.attach(io: file, filename: 'post21.png')
+post21.save
 
-post22 = Post.create(caption: '', user_id: user7.id)
+post22 = Post.new(caption: '', user_id: user7.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post17.jpg")
 post22.photo.attach(io: file, filename: 'post22.png')
+post22.save
 
-post23 = Post.create(caption: '', user_id: user8.id)
+post23 = Post.new(caption: '', user_id: user8.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post18.jpg")
 post23.photo.attach(io: file, filename: 'post23.png')
+post23.save
 
-post24 = Post.create(caption: '', user_id: user9.id)
+post24 = Post.new(caption: '', user_id: user9.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post19.jpg")
 post24.photo.attach(io: file, filename: 'post24.png')
+post24.save
 
-post25 = Post.create(caption: 'So nice the view', user_id: user10.id)
+post25 = Post.new(caption: 'So nice the view', user_id: user10.id)
 file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post20.jpg")
 post25.photo.attach(io: file, filename: 'post25.png')
+post25.save
 
 comment1 = Comment.create(user_id: user2.id, post_id: post1.id, body: "This is nice")
 comment2 = Comment.create(user_id: user3.id, post_id: post1.id, body: "oh yeah.")
