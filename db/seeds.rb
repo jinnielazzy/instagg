@@ -13,44 +13,45 @@ Comment.destroy_all
 Follow.destroy_all 
 Like.destroy_all
 
-user1 = User.create(username: 'lizbot', password: 'password', bio: 'this is lizbot')
-file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post1.jpg")
+user1 = User.new(username: 'lizbot', password: 'password', bio: 'this is lizbot')
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/aerial.jpg")
 user1.photo.attach(io: file, filename: 'profile.png')
+user1.save
 
 user2 = User.create(username: 'jinbot', password: 'password', bio: 'this is jinbot')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/aerial.jpg")
 user2.photo.attach(io: file, filename: 'profile.png')
 
 user3 = User.create(username: 'ohyeah', password: 'password', bio: 'this is jinbot')
-file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/post10.jpg")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/apartment.jpg")
 user3.photo.attach(io: file, filename: 'profile.png')
 
 user4 = User.create(username: 'chris', password: 'password', bio: 'I love coding')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/iWMTqGk9Eet2DrG2YtsQHPoP")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/arches.jpg")
 user4.photo.attach(io: file, filename: 'profile.png')
 
 user5 = User.create(username: 'fiona', password: 'password', bio: '')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/HSSQqjW7vCV4Uctq36PWmoQo")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/art_building.jpg")
 user5.photo.attach(io: file, filename: 'profile.png')
 
 user6 = User.create(username: 'atom', password: 'password', bio: 'atom says hi')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/H6ZVpaz8J4Bt9bBkfcHbe1oY")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/beach.jpg")
 user6.photo.attach(io: file, filename: 'profile.png')
 
 user7 = User.create(username: 'Sheldon', password: 'password', bio: 'science is best')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/uz4QrHwv16cqAEzH629m73GB")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/bird.jpg")
 user7.photo.attach(io: file, filename: 'profile.png')
 
 user8 = User.create(username: 'Wizard', password: 'password', bio: 'MAGIC!!!')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/Q1LDc96hjUtNz57YgGroHLyL")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/blueprint.jpg")
 user8.photo.attach(io: file, filename: 'profile.png')
 
 user9 = User.create(username: 'Tony', password: 'password', bio: '')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/dY5mmnqcbCBuKbL24AM2JfPd")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/boardwalk.jpg")
 user9.photo.attach(io: file, filename: 'profile.png')
 
 user10 = User.create(username: 'Nikola', password: 'password', bio: 'Im pretty dope')
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/pcqRQvd2csDEoFFYEiyyHYiz")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/bridge.jpg")
 user10.photo.attach(io: file, filename: 'profile.png')
 
 post1 = Post.new(caption: 'Street food!!', user_id: user1.id)
@@ -59,22 +60,22 @@ post1.photo.attach(io: file, filename: 'post1.png')
 post1.save
 
 post2 = Post.new(caption: 'SO AWESOME, I GOT IT', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/mHd33ZNRaEoxQAUw6fidhXoV")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/city.jpg")
 post2.photo.attach(io: file, filename: 'post2.png')
 post2.save
 
 post3 = Post.new(caption: '', user_id: user1.id)
-file = open("https://shuttr-dev-seeds.s3-us-west-1.amazonaws.com/seamaster.jpg")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/colorful.jpg")
 post3.photo.attach(io: file, filename: 'post3.png')
 post3.save
 
 post4 = Post.new(caption: 'ROSE ROSE', user_id: user1.id)
-file = open("https://shuttr-dev-seeds.s3-us-west-1.amazonaws.com/tent.jpg")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/dining.jpg")
 post4.photo.attach(io: file, filename: 'post4.png')
 post4.save
 
 post5 = Post.new(caption: 'Come and visit, Im in USC', user_id: user1.id)
-file = open("https://s3-us-west-1.amazonaws.com/instagg-dev/78CwnzqzVA5cM81qifafeD6E")
+file = open("https://instagg-dev.s3-us-west-1.amazonaws.com/flower.jpg")
 post5.photo.attach(io: file, filename: 'post5.png')
 post5.save
 
