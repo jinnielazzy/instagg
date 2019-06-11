@@ -14,7 +14,7 @@
   color: #fff;
   cursor: pointer;
   display: inline-block;
-	font-family: 'Poppins', sans-serif;
+	// font-family: 'Poppins', sans-serif;
 	font-size: inherit;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -67,4 +67,8 @@
   border: solid 1px #ddd;
   border-radius: 5px;
   resize: none;
+}
+
+.bio-input textarea:focus {
+  outline: none;
 }

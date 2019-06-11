@@ -50,7 +50,7 @@
 .profile-edit h1 {
   font-size: 28px;
   line-height: 32px;
-  font-family: sans-serif;
+  // font-family: sans-serif;
   font-weight: 300;
 }
 
@@ -58,10 +58,16 @@
   text-decoration: none;
   margin-left: 20px;
   border: 1px solid #e6e6e6;
-  font-family: sans-serif;
+  // font-family: sans-serif;
   font-size: 12px;
   padding: 5px;
   border-radius: 20%;
+  width: 90px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-left: 50px;
+  text-align: center;
 }
 
 .profile-edit a:visited {
@@ -75,12 +81,12 @@
 
 .profile-follows span {
   margin-right: 30px;
-  font-family: sans-serif;
+  // font-family: sans-serif;
 }
 
 .bio {
   margin-top: 30px;
-  font-family: sans-serif;
+  // font-family: sans-serif;
 }
 
 .user-posts-container {
@@ -108,4 +114,22 @@
   width: 400px;
   height: 400px;
   object-fit: cover;
+}
+
+.following {
+  width: 90px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+
+.unfollow {
+  background: #3897f0;
+  width: 90px;
+  height: 30px;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-left: 50px;
 }

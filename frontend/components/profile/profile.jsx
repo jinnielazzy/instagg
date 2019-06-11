@@ -30,11 +30,11 @@ class Profile extends React.Component {
       const followers = this.props.follows.map(follower => follower.follower_id);
       if (followers.includes(this.props.currentUser.id)) {
         return (
-          <button onClick={() => this.props.deleteFollow(this.props.user.id)}>Following</button>
+          <button className="following" onClick={() => this.props.deleteFollow(this.props.user.id)}>Following</button>
         )
       } else {
         return (
-          <button onClick={() => this.props.createFollow({ user_id: this.props.user.id})}>Follow</button>
+          <button className="unfollow" onClick={() => this.props.createFollow({ user_id: this.props.user.id})}>Follow</button>
         )
       }
     }

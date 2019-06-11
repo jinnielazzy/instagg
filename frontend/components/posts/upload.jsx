@@ -82,7 +82,7 @@ class Upload extends React.Component {
             <div className="text-input">
               <textarea className="text" rows="4" onChange={this.handleCaption} placeholder="Add your caption..."></textarea>
             </div>
-            <input className="submit-btn" type="submit" value="Post It"/>
+            <button className="submit-btn">Post It</button>
           </form>
         </div>
         {this.renderErrors()}
