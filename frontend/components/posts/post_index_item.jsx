@@ -45,6 +45,7 @@ class PostIndexItem extends React.Component {
   render() {
     const post = this.props.post;
     const likes = this.props.likes.filter(like => like.post_id === post.id)
+    
     return (
       <div className="post-item-container">
         <header className="post-header">
@@ -52,7 +53,7 @@ class PostIndexItem extends React.Component {
               <Link to={`/users/${post.user_id}`}><img src={post.author.profile} /></Link>
             </div>
             <div className="post-author-name">
-              {post.author.username}
+            <Link to={`/users/${post.user_id}`}>{post.author.username}</Link>
             </div>
         </header>
         <div className="post-main">
@@ -65,10 +66,13 @@ class PostIndexItem extends React.Component {
           </div>
           <div className="post-comment">
             <div className="post-caption">
-              <span className="username">{post.author.username}</span>
+              <Link to={`/users/${post.user_id}`}><span className="username">{post.author.username}</span></Link>              
               <span className="caption">{post.caption}</span>
             </div>
             <CommentContainer post={post}/>
+          </div>
+          <div className="post-date">
+            <span>{new Date(post.created).toDateString()}</span>
           </div>
           <div className="comment-form-container">
             <div className="comment-form">
@@ -77,7 +81,7 @@ class PostIndexItem extends React.Component {
               </form>
               <button onClick={this.handleSubmit}>Post</button>
             </div>
-          </div>
+          </div>         
         </div>
       </div>
     )

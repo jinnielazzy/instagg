@@ -21,6 +21,8 @@
 .header-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  max-width: 900px;
 }
 
 .profile-img {
@@ -87,6 +89,7 @@
 .bio {
   margin-top: 30px;
   // font-family: sans-serif;
+  word-break: break-all;
 }
 
 .user-posts-container {
@@ -137,4 +140,9 @@
 .unfollow,
 .following:focus {
   outline: none;
+}
+
+.logout-btn i {
+  font-size: x-large;
+  cursor: pointer;
 }

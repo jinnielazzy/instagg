@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-body {
-  margin-left: 15px;
-  margin-right: 15px;
   font-weight: 100;
   word-break: break-all;
   text-align: start;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .comment-form-container {
@@ -63,12 +63,18 @@
   display: inline;
   padding: 0;
   cursor: pointer;
+  margin-left: 10px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .post-comment {
   display: flex;
   flex-direction: column;
   margin-left: 15px;
+  margin-right: 15px;
   font-size: 15px;
   margin-top: 10px;
   // font-family: sans-serif;

@@ -73,7 +73,7 @@ class Profile extends React.Component {
               <div className="bio">{user.bio}</div>
             </div>
             <div className="logout-btn">
-              <button onClick={logout}>Log Out</button>
+              <i onClick={logout} className="fas fa-sign-out-alt"></i>
             </div>
           </div>
         </div>
