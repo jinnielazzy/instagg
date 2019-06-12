@@ -1,4 +1,3 @@
-
 json.user do 
   json.extract! user, :id, :username, :bio
   json.numFollowers user.followers.length

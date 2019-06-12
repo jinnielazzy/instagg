@@ -5,7 +5,7 @@ import Posts from './posts';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    posts: state.entities.posts
+    posts: Object.values(state.entities.posts)
   }
 };
 

@@ -56,7 +56,7 @@ class PostIndexItem extends React.Component {
             </div>
         </header>
         <div className="post-main">
-          <img src={post.photoUrl} />
+          <img src={post.img_url} />
         </div>
         <div className="post-comment-container">
           {this.renderLikeBtn(likes, post)}

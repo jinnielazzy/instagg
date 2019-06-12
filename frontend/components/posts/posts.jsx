@@ -13,13 +13,15 @@ class Posts extends React.Component {
   render() {
     const posts = this.props.posts;
     return (
-      <>
-        {/* {
-          posts.map(post => {
-            <Post post={post}/>
-          })
-        } */}
-      </>
+      <div className="explore-posts">
+        <div className="user-posts">
+          {
+            posts.map(post => 
+              <Post key={post.id} post={post}/>
+            )
+          }
+        </div>
+      </div>
     )
   }
 }
