@@ -7,7 +7,7 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchUserPosts(this.props.currentUser.id);
   }
 
   render() {

@@ -2,9 +2,13 @@ class Api::PostsController < ApplicationController
   def index
     # @posts = Post.all
     # should not be all posts, only the posts current_user follows
-    @posts = current_user.following_posts
-    @posts += current_user.posts
-    # @posts = (@posts.sort_by &:created_at).reverse
+    if params[:user_id]
+      @posts = current_user.following_posts
+      @posts += current_user.posts  
+    else
+      @posts = Post.all      
+    end
+
     render :index
   end
   

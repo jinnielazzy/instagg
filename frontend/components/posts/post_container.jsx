@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchUserPosts } from '../../actions/post_actions';
 import PostIndex from './post_index';
 import { fetchAllUsers } from '../../actions/user_action';
 import { deleteLike, createLike, fetchLikes } from '../../actions/like_action';
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    fetchPosts: () => dispatch(fetchPosts()),
+    fetchUserPosts: (UserId) => dispatch(fetchUserPosts(UserId)),
     fetchLikes: (id) => dispatch(fetchLikes(id)),
     createLike: (like) => dispatch(createLike(like)),
     deleteLike: (id) => dispatch(deleteLike(id)),

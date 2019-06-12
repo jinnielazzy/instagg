@@ -4,11 +4,11 @@ export const fetchAllPosts = () => {
   })
 }
 
-// export const fetchUserPosts = (id) => {
-//   return $.ajax({
-//     url: `api/posts`
-//   })
-// }
+export const fetchUserPosts = (id) => {
+  return $.ajax({
+    url: `api/users/${id}/posts`
+  })
+}
 
 export const fetchPost = id => {
   return $.ajax({

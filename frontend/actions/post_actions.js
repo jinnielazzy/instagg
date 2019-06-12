@@ -40,6 +40,13 @@ export const fetchPosts = () => dispatch => {
   )
 }
 
+export const fetchUserPosts = (id) => dispatch => {
+  return PostAPIUtil.fetchUserPosts(id).then(
+    (posts) => dispatch(receiceAllPosts(posts)),
+    (error) => dispatch(receivePostErrors(error.responseJSON)) 
+  )
+}
+
 export const fetchPost = (id) => dispatch => {
   return PostAPIUtil.fetchPost(id).then(
     (post) => dispatch(receicePost(post)),
@@ -68,7 +75,6 @@ export const deletePost = (id) => dispatch => {
   )
 }
 
-// not sure if needed in re-rendering component
 export const removeErrors = () => dispatch => {
   return dispatch(receivePostErrors([]))
 }

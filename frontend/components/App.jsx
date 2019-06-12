@@ -10,6 +10,7 @@ import UploadContainer from './posts/upload_container';
 import ProfileContainer from './profile/profile_container';
 import EditProfileContainer from './profile/edit_profile_container';
 import UserProfileContainer from './profile/user_profile_container';
+import ExploreContainer from './posts/explore_container';
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
           <ProtectedRoute path="/profile/edit" component={EditProfileContainer}/>
           <ProtectedRoute path="/profile" component={ProfileContainer}/>
           <ProtectedRoute path="/users/:id" component={UserProfileContainer}/>
-          <ProtectedRoute path="/explore" component={}/>
+          <ProtectedRoute path="/explore" component={ExploreContainer}/>
           <Redirect to='/'/>
         </Switch>
       </div>
