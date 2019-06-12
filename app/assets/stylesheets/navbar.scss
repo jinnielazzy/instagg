@@ -66,6 +66,8 @@
   min-width: 125px;
   width: 215px;
   display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .search input {
@@ -83,6 +85,13 @@
 .search input:focus {
   padding-left: 16px;
   background-position: 0;
+}
+
+.result-lists {
+  // background: whitesmoke;
+  list-style: none;
+  display: inline;
+  margin: 2px;
 }
 
 .function-container {

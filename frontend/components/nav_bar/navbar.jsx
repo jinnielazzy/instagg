@@ -7,7 +7,6 @@ class NavBar extends React.Component {
     this.state = {
       query: ""
     }
-
     this.handleSearch = this.handleSearch.bind(this);
   }
 
@@ -18,14 +17,27 @@ class NavBar extends React.Component {
     })
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
   componentDidUpdate(prevProps, prevState) {
     // dispatch fetchQuery here, prevProps.searchedUsers array
-    // this.props.fetchSearchUsers(this.state.query);
+    if (prevState !== this.state) {
+      if (this.state.query === "") {
+        this.props.clearSearchUsers();
+      } else {
+        this.props.fetchSearchUsers(this.state.query);
+      }
+    }
   }  
-
+  
   render() {
     // const currentUser = this.props.user
-
     if (!this.props.user) return null;
     
     return (
@@ -36,7 +48,20 @@ class NavBar extends React.Component {
           </div>
           <div className="search">
             <input type="search" placeholder="Search" onChange={this.handleSearch}/>
-            {/* render this.props.searchedUsers */}
+            <div className="results">
+              <ul className="result-lists">
+                {
+                  this.props.searchUsers.map(user => {
+                    return (
+                      <li className="user" key={user.id}>
+                        <div className="username">{user.user.username}</div>
+                        {/* <div className="userimg"><img src={user.user.profile}/></div> */}
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
           </div>
           <div className="function-container">
             <div className="function">
