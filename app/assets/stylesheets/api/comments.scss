@@ -110,3 +110,14 @@
   text-decoration: none;
   color: black;
 }
+
+.delete-comment {
+  text-align: center;
+}
+
+.delete-comment i {
+  position: relative;
+  top: 10%;
+  margin-right: 10px; 
+  cursor: pointer;
+}

@@ -8,7 +8,11 @@ class CommentIndexItem extends React.Component {
 
   renderBtn() {
     if (this.props.currentUser.id === this.props.comment.user_id) {
-      return <button onClick={() => this.props.deleteComment(this.props.comment.id)} className="delete-comment">delete</button>
+      return (
+        <div className="delete-comment">
+          <i className="fas fa-backspace" onClick={() => this.props.deleteComment(this.props.comment.id)} ></i>
+        </div>
+      )
     }
   }
 
@@ -21,8 +25,8 @@ class CommentIndexItem extends React.Component {
         </div>
         <div className="comment-body">
           <span>{comment.body}</span> 
-          {this.renderBtn()} 
         </div>
+        {this.renderBtn()} 
       </div>
     )
   }

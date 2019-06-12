@@ -14,7 +14,7 @@ class CommentIndex extends React.Component {
     const comments = this.props.comments;
     const currentUser = this.props.currentUser;
     return (
-      <>
+      <div className="post-comment-text">
         {
           comments.map(comment => 
             <CommentIndexItem key={comment.id} 
@@ -24,7 +24,7 @@ class CommentIndex extends React.Component {
             />
           )
         }
-      </>
+      </div>
     )
   }
 

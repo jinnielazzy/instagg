@@ -68,9 +68,7 @@ class PostIndexItem extends React.Component {
               <span className="username">{post.author.username}</span>
               <span className="caption">{post.caption}</span>
             </div>
-            <div className="post-comment-text">
-              <CommentContainer post={post}/>
-            </div>
+            <CommentContainer post={post}/>
           </div>
           <div className="comment-form-container">
             <div className="comment-form">
