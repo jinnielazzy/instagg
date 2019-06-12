@@ -133,3 +133,8 @@
   border-radius: 5px;
   margin-left: 50px;
 }
+  
+.unfollow,
+.following:focus {
+  outline: none;
+}

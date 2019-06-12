@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProfilePost from './profile_post';
+import ProfilePost from '../posts/post';
 
 class Profile extends React.Component {
   constructor(props) {

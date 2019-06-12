@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProfilePost ({post}) {
+function Post ({post}) {
   return (
     <div className="post-img">
       <img src={post.img_url} />
@@ -8,4 +8,4 @@ function ProfilePost ({post}) {
   )
 }
 
-export default ProfilePost;
+export default Post;

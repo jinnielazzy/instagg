@@ -26,6 +26,7 @@ const App = () => {
           <ProtectedRoute path="/profile/edit" component={EditProfileContainer}/>
           <ProtectedRoute path="/profile" component={ProfileContainer}/>
           <ProtectedRoute path="/users/:id" component={UserProfileContainer}/>
+          <ProtectedRoute path="/explore" component={}/>
           <Redirect to='/'/>
         </Switch>
       </div>

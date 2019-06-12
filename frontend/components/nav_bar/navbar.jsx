@@ -40,6 +40,9 @@ class NavBar extends React.Component {
           </div>
           <div className="function-container">
             <div className="function">
+              <div className="explore">
+                <Link to="/explore"><span className="far fa-compass"></span></Link>
+              </div>
               <div className="upload">
                 <Link to="/upload"><span className="fas fa-cloud-upload-alt"></span></Link>
               </div>
