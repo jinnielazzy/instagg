@@ -11,14 +11,13 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    // const comments = this.props.comments.map(;
     const comments = this.props.comments;
+    const currentUser = this.props.currentUser;
     return (
       <>
-        {/* <CommentIndexItem key={this.props.post.id} comments={comments}/> */}
         {
           comments.map(comment => {
-            return <CommentIndexItem key={comment.id} comment={comment}/>
+            return <CommentIndexItem key={comment.id} comment={comment} currentUser={currentUser}/>
           })
         }
       </>

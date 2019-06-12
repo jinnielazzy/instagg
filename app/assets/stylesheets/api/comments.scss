@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-body {
   margin-left: 15px;
+  margin-right: 15px;
   font-weight: 100;
+  word-break: break-all;
+  text-align: start;
 }
 
 .comment-form-container {

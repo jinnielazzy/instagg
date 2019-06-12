@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentContainer from '../comments/comment_container';
 import { Link } from 'react-router-dom';
+import Textarea from 'react-textarea-autosize';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class PostIndexItem extends React.Component {
           <div className="comment-form-container">
             <div className="comment-form">
               <form>
-                <textarea placeholder="Add a Comment" value={this.state.body} onChange={this.updateComment}></textarea>
+                <Textarea placeholder="Add a Comment" value={this.state.body} onChange={this.updateComment}></Textarea>
               </form>
               <button onClick={this.handleSubmit}>Post</button>
             </div>

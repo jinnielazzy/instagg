@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from 'react-textarea-autosize';
 
 class Upload extends React.Component {
   constructor(props) {
@@ -80,7 +81,7 @@ class Upload extends React.Component {
               <label htmlFor="file" className="btn">upload picture</label>
             </div>
             <div className="text-input">
-              <textarea className="text" rows="4" onChange={this.handleCaption} placeholder="Add your caption..."></textarea>
+              <Textarea className="text" rows="4" onChange={this.handleCaption} placeholder="Add your caption..."></Textarea>
             </div>
             <button className="submit-btn">Post It</button>
           </form>

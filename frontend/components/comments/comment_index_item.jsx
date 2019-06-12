@@ -6,6 +6,16 @@ class CommentIndexItem extends React.Component {
     super(props);
   }
 
+  handleDeleteComment() {
+    
+  }
+
+  renderBtn() {
+    if (this.props.currentUser.id === this.props.comment.user_id) {
+      return <button className="delete-comment">delete</button>
+    }
+  }
+
   render() {
     const comment = this.props.comment;
     return (
@@ -14,7 +24,8 @@ class CommentIndexItem extends React.Component {
           <Link to={`/users/${comment.user_id}`}>{comment.username}</Link>
         </div>
         <div className="comment-body">
-          {comment.body}
+          <span>{comment.body}</span> 
+          {this.renderBtn()} 
         </div>
       </div>
     )

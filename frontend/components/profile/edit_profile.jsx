@@ -1,4 +1,5 @@
 import React from 'react';
+import Textarea from 'react-textarea-autosize';
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class EditProfile extends React.Component {
           </div>
           <div className="edit-profile-bio">
             <div className="bio-input">
-              <textarea onChange={this.handleBio} id="bio-update" placeholder="Update your bio..."></textarea>
+              <Textarea onChange={this.handleBio} id="bio-update" placeholder="Update your bio..."></Textarea>
             </div>
           </div>
           <input className="submit-btn" type="submit" value="Update It" />
