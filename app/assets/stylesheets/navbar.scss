@@ -42,10 +42,17 @@
 }
 
 .logo a {
-  font-size:45px;
+  font-size: inherit;
   text-decoration: none;
   font-weight: 500;
   color: black;
+  display: flex;
+}
+
+.logo span {
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 1px solid #ccc;
 }
 
 .logo a:visited {

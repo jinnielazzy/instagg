@@ -27,13 +27,13 @@ class NavBar extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // dispatch fetchQuery here, prevProps.searchedUsers array
-    if (prevState !== this.state) {
-      if (this.state.query === "") {
-        this.props.clearSearchUsers();
-      } else {
-        this.props.fetchSearchUsers(this.state.query);
-      }
-    }
+    // if (prevState !== this.state) {
+    //   if (this.state.query === "") {
+    //     this.props.clearSearchUsers();
+    //   } else {
+    //     this.props.fetchSearchUsers(this.state.query);
+    //   }
+    // }
   }  
   
   render() {
@@ -44,7 +44,14 @@ class NavBar extends React.Component {
       <div className="navbar">
         <div className="navbar-container">
           <div className="logo">
-            <Link to="/posts">Insta-gg</Link>
+            <Link to="/posts"> 
+              <div className="icon">
+                <i className="fab fa-instagram"></i>
+              </div>
+              <div className="logo-text">
+                <span>Insta-gg</span>
+              </div>
+            </Link>
           </div>
           <div className="search">
             <input type="search" placeholder="Search" onChange={this.handleSearch}/>
