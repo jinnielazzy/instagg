@@ -92,6 +92,7 @@
 .search input:focus {
   padding-left: 16px;
   background-position: 0;
+  outline: none;
 }
 
 .result-lists {
@@ -99,6 +100,30 @@
   list-style: none;
   display: inline;
   margin: 2px;
+  background: #FAFAFA;
+  padding: 0;
+  border: 1px solid;
+  border-color: #cbcfe2 #c8cee7 #c4c7d7;
+  border-radius: 3px;
+  background-color: #fdfdfd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+}
+
+.user a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.userimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.username {
+  margin-left: 15px;
 }
 
 .function-container {

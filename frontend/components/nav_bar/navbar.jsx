@@ -5,9 +5,14 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ""
+      query: "",
+      display: false
     }
+
     this.handleSearch = this.handleSearch.bind(this);
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   handleSearch(e) {
@@ -18,28 +23,51 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener('mousedown', this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleClick);
+  }
+
+  handleClick(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({
+        query: "",
+        display: false
+      })
+    }
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
   }
 
   componentDidUpdate(prevProps, prevState) {
     // dispatch fetchQuery here, prevProps.searchedUsers array
-    // if (prevState !== this.state) {
-    //   if (this.state.query === "") {
-    //     this.props.clearSearchUsers();
-    //   } else {
-    //     this.props.fetchSearchUsers(this.state.query);
-    //   }
-    // }
+    if (prevState.query !== this.state.query) {
+      if (this.state.query === "") {
+        this.props.clearSearchUsers();
+      } else {
+        this.props.fetchSearchUsers(this.state.query);
+        this.setState({
+          display: true
+        })
+      }
+    }
   }  
   
+  reset() {
+    this.setState({
+      query: "",
+      display: false
+    })
+  }
+
   render() {
     // const currentUser = this.props.user
     if (!this.props.user) return null;
-    
+
     return (
       <div className="navbar">
         <div className="navbar-container">
@@ -53,22 +81,26 @@ class NavBar extends React.Component {
               </div>
             </Link>
           </div>
-          <div className="search">
+          <div className="search" ref={this.setWrapperRef}>
             <input type="search" placeholder="Search" onChange={this.handleSearch}/>
-            <div className="results">
-              <ul className="result-lists">
-                {
-                  this.props.searchUsers.map(user => {
-                    return (
-                      <li className="user" key={user.id}>
-                        <div className="username">{user.user.username}</div>
-                        {/* <div className="userimg"><img src={user.user.profile}/></div> */}
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-            </div>
+            {
+              this.state.display ? (
+                  <ul className="result-lists">
+                    {
+                      this.props.searchUsers.map(user => {
+                        return (
+                          <li className="user" key={user.user.id} onClick={this.reset}>
+                            <Link to={`/users/${user.user.id}`}>
+                              <img className="userimg" src={user.user.profile}/>
+                              <span className="username">{user.user.username}</span>
+                            </Link>
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+              ) : null
+            }
           </div>
           <div className="function-container">
             <div className="function">

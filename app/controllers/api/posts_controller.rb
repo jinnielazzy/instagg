@@ -1,7 +1,5 @@
 class Api::PostsController < ApplicationController
   def index
-    # @posts = Post.all
-    # should not be all posts, only the posts current_user follows
     if params[:user_id]
       @posts = current_user.following_posts
       @posts += current_user.posts  

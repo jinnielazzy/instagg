@@ -1,4 +1,4 @@
-import { RECEIVE_SEARCH_USERS } from "../actions/user_action";
+import { RECEIVE_SEARCH_USERS, RECEIVE_USER } from "../actions/user_action";
 import merge from 'lodash/merge';
 
 const searchReducer = (state = {}, action) => {
@@ -6,6 +6,8 @@ const searchReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SEARCH_USERS:
       return merge({}, action.searchedUsers);
+    case RECEIVE_USER:
+      return {};
     default:
       return state;
   }
