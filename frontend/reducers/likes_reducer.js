@@ -1,6 +1,7 @@
 import { RECEIVE_LIKES, RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_action";
 import { merge } from 'lodash';
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+import { REMOVE_POST } from "../actions/post_actions";
 
 const likesReducer = (state = {}, action) => {
   let newState;
@@ -12,6 +13,10 @@ const likesReducer = (state = {}, action) => {
     case REMOVE_LIKE:
       newState = merge({}, state);
       delete newState[action.like.id]
+      return newState;
+    case REMOVE_POST:
+      let arr = Object.values(state).filter(like => like.post_id !== action.postId);
+      newState = merge({}, arr);
       return newState;
     case LOGOUT_CURRENT_USER:
       return {};

@@ -42,6 +42,14 @@ class PostIndexItem extends React.Component {
     }
   }
 
+  renderDeletePost() {
+    if (this.props.post.user_id === this.props.currentUser.id) {
+      return (
+        <i className="far fa-trash-alt" onClick={() => this.props.deletePost(this.props.post.id)}></i>
+      )
+    }
+  }
+
   render() {
     const post = this.props.post;
     const likes = this.props.likes.filter(like => like.post_id === post.id)
@@ -53,7 +61,10 @@ class PostIndexItem extends React.Component {
               <Link to={`/users/${post.user_id}`}><img src={post.author.profile} /></Link>
             </div>
             <div className="post-author-name">
-            <Link to={`/users/${post.user_id}`}>{post.author.username}</Link>
+              <Link to={`/users/${post.user_id}`}>{post.author.username}</Link>
+            </div>
+            <div className="post-delete">
+              {this.renderDeletePost()}
             </div>
         </header>
         <div className="post-main">

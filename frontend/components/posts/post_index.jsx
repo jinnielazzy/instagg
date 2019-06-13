@@ -27,6 +27,7 @@ class PostIndex extends React.Component {
             createLike={this.props.createLike} 
             deleteLike={this.props.deleteLike} 
             fetchLikes={this.props.fetchLikes}
+            deletePost={this.props.deletePost}
             key={post.id} />
           })       
         }
