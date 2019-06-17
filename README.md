@@ -4,7 +4,7 @@
 
 Insta-gg, an instagram clone website. This website allows users to view feed of their followings. Users can comment/uncomment, like/unlike those posts. Also, users can upload post, and delete their posts. Moreover, user could follow/unfollow other users, and edit their own profile pictures. And, in order to look for some user, users could perform searching by inputing query.
 
-![](view.gif)
+![](https://media.giphy.com/media/Q7q1sKclKWnLUfdiZb/giphy.gif)
 
 ### Technologies: 
 Backend: rails, postgreSQL, aws; Frontend: React, Redux
@@ -12,7 +12,7 @@ Backend: rails, postgreSQL, aws; Frontend: React, Redux
 Searching for user:
 Users input search query, then result displays and userd can click on one of the results 
 and jump that user's profile
-![](search.gif)
+![](https://media.giphy.com/media/MDlMr5jXfZasiijsvi/giphy.gif)
 dispatch searching action
 ```javascript
 componentDidUpdate(prevProps, prevState) {
@@ -38,7 +38,7 @@ end
 Like/Unlike, Comment/Uncomment:
 
 Users like, unlike, comment, uncomment the posts 
-![](post_action.gif)
+![](https://media.giphy.com/media/hrvemi6kEchA0c9oXw/giphy.gif)
 dispatch actions
 Like/Unlike: 
 ```javascript
@@ -120,7 +120,7 @@ Upload Post:
 
 Users could click on upload pictures to upload post, caption is optional
 
-![](upload.gif)
+![](https://media.giphy.com/media/J1AA5PnlevqxPp9fSU/giphy.gif)
 dispatch upload action
 ```javascript
 handleSubmit(e) {
@@ -175,7 +175,7 @@ end
 Delete Post:
 
 Users can delete their own posts if they don't want it 
-![](delete.gif)
+![](https://media.giphy.com/media/gh0igmo27EkKMY4Wbk/giphy.gif)
 dispatch delete action
 ```javascript
 if (this.props.post.user_id === this.props.currentUser.id) {
@@ -201,7 +201,7 @@ end
 Edit Profile:
 
 Users could edit their profile bio, and picture. They are both optional
-![](editprofile.gif)
+![](https://media.giphy.com/media/iIwFxZHpt0QUkMPM9N/giphy.gif)
 
 dispatch edit action
 ```javascript
