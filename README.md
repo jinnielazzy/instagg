@@ -39,6 +39,7 @@ Like/Unlike, Comment/Uncomment:
 
 Users like, unlike, comment, uncomment the posts 
 ![](https://media.giphy.com/media/hrvemi6kEchA0c9oXw/giphy.gif)
+
 dispatch actions
 Like/Unlike: 
 ```javascript
