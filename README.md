@@ -178,6 +178,7 @@ Delete Post:
 
 Users can delete their own posts if they don't want it 
 ![](https://media.giphy.com/media/gh0igmo27EkKMY4Wbk/giphy.gif)
+
 dispatch delete action
 ```javascript
 if (this.props.post.user_id === this.props.currentUser.id) {
