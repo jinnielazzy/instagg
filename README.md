@@ -10,9 +10,10 @@ Insta-gg, an instagram clone website. This website allows users to view feed of 
 Backend: rails, postgreSQL, aws; Frontend: React, Redux
 
 Searching for user:
-Users input search query, then result displays and userd can click on one of the results 
-and jump that user's profile
+Users input search query, then result displays and userd can click on one of the results and jump that user's profile
+
 ![](https://media.giphy.com/media/MDlMr5jXfZasiijsvi/giphy.gif)
+
 dispatch searching action
 ```javascript
 componentDidUpdate(prevProps, prevState) {
@@ -123,6 +124,7 @@ Upload Post:
 Users could click on upload pictures to upload post, caption is optional
 
 ![](https://media.giphy.com/media/J1AA5PnlevqxPp9fSU/giphy.gif)
+
 dispatch upload action
 ```javascript
 handleSubmit(e) {
@@ -205,6 +207,7 @@ end
 Edit Profile:
 
 Users could edit their profile bio, and picture. They are both optional
+
 ![](https://media.giphy.com/media/iIwFxZHpt0QUkMPM9N/giphy.gif)
 
 dispatch edit action
