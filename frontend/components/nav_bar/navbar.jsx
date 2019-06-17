@@ -44,7 +44,6 @@ class NavBar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // dispatch fetchQuery here, prevProps.searchedUsers array
     if (prevState.query !== this.state.query) {
       if (this.state.query === "") {
         this.props.clearSearchUsers();

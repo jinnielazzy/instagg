@@ -28,7 +28,6 @@ class Upload extends React.Component {
       formData.append('post[photo]', this.state.photoFile);
     }
     this.props.createPost(formData)
-      // .then(() => this.props.fetchUser(this.state.user_id))
       .then(() => this.props.history.push('/posts'));
   }
 
