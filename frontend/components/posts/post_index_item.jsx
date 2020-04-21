@@ -44,8 +44,11 @@ class PostIndexItem extends React.Component {
 
   render() {
     const post = this.props.post;
-    const likes = this.props.likes;
+    const likes = this.props.likes || [];
     const postId = this.props.post.id;
+    const currentUser = this.props.currentUser;
+    const createLike = this.props.createLike;
+    const deleteLike = this.props.deleteLike;
 
     return (
       <div className="post-item-container">
@@ -64,7 +67,7 @@ class PostIndexItem extends React.Component {
           <img src={post.img_url} />
         </div>
         <div className="post-comment-container">
-          <Likes likes={likes} postId={postId}/>
+          <Likes likes={likes} postId={postId} currentUser={currentUser} createLike={createLike} deleteLike={deleteLike} />
           <div className="post-comment">
             <div className="post-caption">
               <Link to={`/users/${post.user_id}`}><span className="username">{post.author.username}</span></Link>              
