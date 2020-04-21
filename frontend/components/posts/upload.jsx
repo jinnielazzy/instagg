@@ -8,7 +8,8 @@ class Upload extends React.Component {
       user_id: this.props.currentUser.id,
       photoFile: null,
       photoUrl: null,
-      body: ""
+      body: "",
+      error: false
     }
 
     this.handleFile = this.handleFile.bind(this);
@@ -21,12 +22,16 @@ class Upload extends React.Component {
   }
 
   handleSubmit(e) {
+    if (this.state.error) return;
+
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[caption]', this.state.body);
+
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }
+
     this.props.createPost(formData)
       .then(() => this.props.history.push('/posts'));
   }
@@ -43,35 +48,60 @@ class Upload extends React.Component {
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
 
-    reader.onloadend = () => {
+    if (file === undefined || file.type.split("/")[0] !== 'image') {
       this.setState({
-        photoFile: file, 
-        photoUrl: reader.result
-      })
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
+        photoFile: null,
+        photoUrl: null,
+        body: "",
+        error: true
+      });
+    } else {
+      reader.onloadend = () => {
+        this.setState({
+          photoFile: file, 
+          photoUrl: reader.result,
+          error: false
+        });
+      };
+  
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     }
   }
 
   renderErrors() {
     return (
-        this.props.errors.map((error, i) => (
-          <div className="upload-post-error" key={`error-${i}`}>
-            <span>{error}</span>
-          </div>
-        ))
+      this.props.errors.map((error, i) => (
+        <div className="upload-post-error" key={`error-${i}`}>
+          <span>{error}</span>
+        </div>
+      ))
     );
   }
 
+  renderPreview() {
+    const preview = this.state.photoUrl;
+
+    if (preview) {
+      return <img src={this.state.photoUrl} />;
+    } else if (this.state.error) {
+      return (
+        <div className="upload-post-error">
+          <span>Wrong file uploaded, it must be an image file</span>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
   render() {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
       <div className="create-post-container">
         <h1>Create a post</h1>
         <div className="preview-container">
-          {preview}
+        {this.renderPreview()}
         </div>
         <div className="post-form-container">
           <form className="post-form" onSubmit={this.handleSubmit}> 
