@@ -16,13 +16,24 @@
   color: grey
 }
 
-.heart {
-  animation: scaling 1000s cubic-bezier(.17, .89, .32, 1.49);
-} 
-
 @keyframes scaling {
-
-  0%, 17.5% {
+  0%,
+  17.5% {
     font-size: 0;
   }
 }
+
+.heart {
+  will-change: font-size;
+  animation: scaling 1s cubic-bezier(.17, .89, .32, 1.49);
+}
+
+// .heart {
+//   animation: scaling 1000s cubic-bezier(.17, .89, .32, 1.49);
+// } 
+
+// @keyframes scaling {
+//   0%, 17.5% {
+//     font-size: 0;
+//   }
+// }
