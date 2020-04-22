@@ -5,29 +5,28 @@ class Likes extends React.Component {
     super(props);
 
     this.state = {
-      class: "no-heart"
+      class: "unliked"
     };
   }
 
   renderLikeBtn() {
     let liker = this.userLiked();
-
     if (liker) {
-      return <div onClick={() => this.unlikePost(liker)} className={this.state.class}>Liked</div>
+      return <div className="like-container" onClick={() => this.unlikePost(liker)}><label className="liked">❤</label></div>
     } else {
-      return <div onClick={() => this.likePost()} className={this.state.class}>Like</div>
+      return <div className="like-container" onClick={() => this.likePost()} ><label className={this.state.class}>❤</label></div>
     }
   }
 
   unlikePost(liker) {
     this.setState({
-      class: "no-heart"
+      class: "unliked"
     }, () => this.props.deleteLike(liker));
   }
 
   likePost() {
     this.setState({
-      class: "heart"
+      class: "liked"
     }, () => this.props.createLike({ post_id: this.props.postId }));
   }
 
@@ -35,13 +34,18 @@ class Likes extends React.Component {
     return this.props.likes.find(like => like.user_id === this.props.currentUser.id);
   }
 
+  animation() {
+    
+  }
+
   render() {
-    let {postId, likes, currentUser} = this.props;
+    let likes = this.props.likes;
 
     return (
-      <div className="stage">
+      <div className="like">
         {this.renderLikeBtn()}
-        <div>{likes.length} Likes</div>
+        <div className="like-container"><span>{likes.length} Likes</span></div>
+        <label className="test" onClick={() => this.animation()}>❤</label>
       </div>
     );
   }

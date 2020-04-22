@@ -1,7 +1,28 @@
-.heart {
+.like {
+  display: flex;
+}
+
+.like-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.liked {
   color: red;
 }
 
-.no-heart {
-  color: blue;
+.unliked {
+  color: grey
+}
+
+.heart {
+  animation: scaling 1000s cubic-bezier(.17, .89, .32, 1.49);
+} 
+
+@keyframes scaling {
+
+  0%, 17.5% {
+    font-size: 0;
+  }
 }
