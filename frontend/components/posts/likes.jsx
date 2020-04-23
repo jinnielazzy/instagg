@@ -11,15 +11,14 @@ class Likes extends React.Component {
 
   renderLikeBtn() {
     let liker = this.userLiked();
+    let innerHTML = "";
     if (liker) {
-      return (
-        <div className="like-container">
-          <label className="liked" onClick={() => this.unlike(liker)}>❤</label>
-        </div>
-      )
+      innerHTML = <label className="liked" onClick={() => this.unlike(liker)}>❤</label>;
     } else {
-      return <div className="like-container"><label className={this.state.class} onClick={() => this.animation()} onAnimationEnd={() => this.animationend()}>❤</label></div>
+      innerHTML = <label className={this.state.class} onClick={() => this.animation()} onAnimationEnd={() => this.animationend()}>❤</label>;
     }
+
+    return <div className="like-container">{innerHTML}</div>
   }
 
   userLiked() {
@@ -48,7 +47,7 @@ class Likes extends React.Component {
     return (
       <div className="like">
         {this.renderLikeBtn()}
-        <div className="like-container"><span>{likes.length} Likes</span></div>
+        <div className="like-container"><span>{likes.length} likes</span></div>
       </div>
     );
   }

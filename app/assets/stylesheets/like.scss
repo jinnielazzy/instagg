@@ -1,11 +1,14 @@
 .like {
   display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 15px;
 }
 
 .like-container {
   display: flex;
   justify-items: center;
   align-items: center;
+  margin-top: 5px;
 }
 
 .liked {
@@ -16,16 +19,27 @@
   color: grey
 }
 
+label {
+  font-size: 35px;
+}
+
 @keyframes scaling {
-  0%,
-  17.5% {
-    font-size: 0;
+  0% {
+    font-size: 35px;
+  }
+  
+  20% {
+    font-size: 40px;
+  }
+
+  40% {
+    font-size: 55px;
   }
 }
 
 .heart {
   will-change: font-size;
-  animation: scaling 1s cubic-bezier(.17, .89, .32, 1.49);
+  animation: scaling 0.5s cubic-bezier(.17, .89, .32, 1.49);
 }
 
 // .heart {
