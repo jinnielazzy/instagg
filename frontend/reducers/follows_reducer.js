@@ -8,7 +8,7 @@ const followsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, action.user.followers, action.user.followings)
+      return merge({}, action.user.user.followers, action.user.user.followings)
     case RECEIVE_FOLLOW:
       return merge({}, state, {[action.follow.follow.id] : action.follow.follow})
     case REMOVE_FOLLOW:
