@@ -7,18 +7,16 @@ function Post ({post}) {
       <Link to={`/users/${post.user_id}`}>
         <img src={post.img_url} />
         <div className="item-info">
-          <ul>
-            <li className="item-likes">
-              <span className="visually-hidden">Likes:</span>
-              <i className="fas fa-heart" aria-hidden="true"></i>
-              56
-            </li>
-            <li className="item-comments">
-              <span className="visually-hidden">Comments:</span>
-              <i className="fas fa-comment" aria-hidden="true"></i>
+          <div className="info-container">
+            <div className="item-likes">
+              <i className="fas fa-heart"></i>
+              54
+            </div>
+            <div className="item-comments">
+              <i className="fas fa-comment"></i>
               34
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </Link>
     </div>
