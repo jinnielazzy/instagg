@@ -8,8 +8,25 @@
       json.profile url_for(post.user.photo)
     end
 
-    json.likes post.likes.length
-    json.comments post.comments.length
+    json.likesLength post.likes.length
+    json.commentsLength post.comments.length
+
+    json.likes do
+      post.likes.each do |like|
+        json.set! like.id do
+          json.like like
+        end
+      end
+    end
+
+    json.comments do
+      post.comments.each do |comment|
+        json.set! comment.id do
+          json.comment comment
+        end
+      end
+    end
+
     json.created post.created_at
   end
   # post's creater's profile

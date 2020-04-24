@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUser } from '../../actions/user_action';
+import { deletePost } from '../../actions/post_actions';
 import { logout } from '../../actions/session_actions';
 
 // current user profile
@@ -10,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
   const allLikes = Object.values(state.entities.likes);
   const allComments = Object.values(state.entities.comments);
 
-  // debugger
   return ({
     currentUser: currentUser,
     user: currentUser,
@@ -23,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     logout: () => dispatch(logout()),
-    fetchUser: id => dispatch(fetchUser(id))
+    fetchUser: id => dispatch(fetchUser(id)),
+    deletePost: id => dispatch(deletePost(id))
   })
 }
 

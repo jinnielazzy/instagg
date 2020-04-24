@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_action';
 import { createFollow, deleteFollow } from '../../actions/follow_action';
+import { deletePost } from '../../actions/post_actions';
 import Profile from './profile';
 
 // following user profile
@@ -25,7 +26,8 @@ const mapDispatchToProps = dispatch => {
   return ({
     fetchUser: id => dispatch(fetchUser(id)),
     createFollow: follow => dispatch(createFollow(follow)),
-    deleteFollow: id => dispatch(deleteFollow(id))
+    deleteFollow: id => dispatch(deleteFollow(id)),
+    deletePost: id => dispatch(deletePost(id))
   })
 }
 

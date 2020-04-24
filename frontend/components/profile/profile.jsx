@@ -43,13 +43,15 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { posts, logout } = this.props;
+    const { posts, logout, deletePost } = this.props;
     let user;
     if (this.props.match.params.id !== undefined) {
       user = this.props.user;
     } else {
       user = this.props.currentUser;
     }
+
+    let isCurrent = user === this.props.currentUser ? true : false;
 
     if (user === undefined) return null;
     const numFollowers = user.numFollowers ? user.numFollowers : 0;
@@ -83,7 +85,8 @@ class Profile extends React.Component {
           <div className="user-posts">
             {
               posts.map((post) => 
-                <ProfilePost post={post} key={post.id}/>
+                <ProfilePost post={post} key={post.id} 
+                isCurrent={isCurrent} deletePost={isCurrent ? deletePost : ""}/>
               )
             }
           </div>
