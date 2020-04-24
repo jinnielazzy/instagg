@@ -9,7 +9,7 @@ const postsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, action.user.posts);
+      return merge({}, action.user.user.posts);
     case RECEIVE_ALL_POSTS:
       return action.posts;
     case RECEIVE_POST:

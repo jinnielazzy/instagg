@@ -8,9 +8,11 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    // following user profile
     if (this.props.match.params.id !== undefined) {
       this.props.fetchUser(this.props.match.params.id);
     } else {
+      // current user profile
       this.props.fetchUser(this.props.currentUser.id);
     }
   }
@@ -52,7 +54,7 @@ class Profile extends React.Component {
     if (user === undefined) return null;
     const numFollowers = user.numFollowers ? user.numFollowers : 0;
     const numFollowings = user.numFollowings ? user.numFollowings : 0;
-
+    
     return (
       <div className="profile-container">
         <div className="header">

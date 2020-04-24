@@ -9,6 +9,7 @@
     end
 
     json.likes post.likes.length
+    json.comments post.comments.length
     json.created post.created_at
   end
   # post's creater's profile

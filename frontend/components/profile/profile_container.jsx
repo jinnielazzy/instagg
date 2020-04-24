@@ -3,13 +3,20 @@ import Profile from './profile';
 import { fetchUser } from '../../actions/user_action';
 import { logout } from '../../actions/session_actions';
 
+// current user profile
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   const posts = Object.values(state.entities.posts);
+  const allLikes = Object.values(state.entities.likes);
+  const allComments = Object.values(state.entities.comments);
+
+  // debugger
   return ({
     currentUser: currentUser,
     user: currentUser,
-    posts: posts
+    posts: posts,
+    allLikes: allLikes,
+    allComments: allComments
   })
 }
 

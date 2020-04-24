@@ -10,11 +10,11 @@ function Post ({post}) {
           <div className="info-container">
             <div className="item-likes">
               <i className="fas fa-heart"></i>
-              54
+              {post.likesLength}
             </div>
             <div className="item-comments">
               <i className="fas fa-comment"></i>
-              34
+              {post.commentsLength}
             </div>
           </div>
         </div>
