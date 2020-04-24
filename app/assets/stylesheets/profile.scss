@@ -92,31 +92,77 @@
   word-break: break-all;
 }
 
+// container
 .user-posts-container {
   max-width: 93.5rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
+// gallery
 .user-posts {
-  display: grid;
+  display: flex;
   flex-wrap: wrap;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px;
   margin: -1rem -1rem;
   padding-bottom: 3rem;
 }
 
 .post-img {
   position: relative;
-  flex: auto auto auto;
+  flex: 1 0 22rem;
+  margin: 1rem;
+  color: #fff;
+  cursor: pointer;
+  justify-content: center;
 }
 
 .post-img img {
   display: block;
-  width: 400px;
-  height: 400px;
+  // width: 400px;
+  // height: 400px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  // object-position: 100% 0;
+}
+
+.post-img:hover .item-info,
+.post-img:focus .item-info {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.item-info {
+  display: none;
+}
+
+.item-info li {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.item-likes {
+  margin-right: 2.2rem;
+}
+
+.item-type {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.fa-clone,
+.fa-comment {
+  transform: rotateY(180deg);
 }
 
 .following {
@@ -146,3 +192,12 @@
   font-size: x-large;
   cursor: pointer;
 }
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+

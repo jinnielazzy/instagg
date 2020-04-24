@@ -3,10 +3,12 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .upload-post-error {
-  margin-top: 30px;
+  margin: 30px 0 30px 0;
 }
 
 .upload-post-error span {
@@ -115,6 +117,7 @@
 .preview-container {
   display: inline-block;
   width: auto;
+  width: 70%;
 }
 
 .preview-container img {
