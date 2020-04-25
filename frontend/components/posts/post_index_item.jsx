@@ -2,6 +2,7 @@ import React from 'react';
 import CommentContainer from '../comments/comment_container';
 import { Link } from 'react-router-dom';
 import Textarea from 'react-textarea-autosize';
+import Likes from './likes';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -33,15 +34,6 @@ class PostIndexItem extends React.Component {
     })
   }
 
-  renderLikeBtn(likes, post) {
-    const liker = likes.find(like => like.user_id === this.props.currentUser.id);
-    if (liker) {
-      return <i className="fas fa-heart" onClick={() => this.props.deleteLike(liker)}></i>
-    } else {
-      return <i className="far fa-heart" onClick={() => this.props.createLike({ post_id: post.id })}></i>      
-    }
-  }
-
   renderDeletePost() {
     if (this.props.post.user_id === this.props.currentUser.id) {
       return (
@@ -52,8 +44,12 @@ class PostIndexItem extends React.Component {
 
   render() {
     const post = this.props.post;
-    const likes = this.props.likes.filter(like => like.post_id === post.id)
-    
+    const likes = this.props.likes || [];
+    const postId = this.props.post.id;
+    const currentUser = this.props.currentUser;
+    const createLike = this.props.createLike;
+    const deleteLike = this.props.deleteLike;
+
     return (
       <div className="post-item-container">
         <header className="post-header">
@@ -71,10 +67,7 @@ class PostIndexItem extends React.Component {
           <img src={post.img_url} />
         </div>
         <div className="post-comment-container">
-          {this.renderLikeBtn(likes, post)}
-          <div className="post-like-count">
-            {post.likes} likes
-          </div>
+          <Likes likes={likes} postId={postId} currentUser={currentUser} createLike={createLike} deleteLike={deleteLike} />
           <div className="post-comment">
             <div className="post-caption">
               <Link to={`/users/${post.user_id}`}><span className="username">{post.author.username}</span></Link>              

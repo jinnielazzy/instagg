@@ -8,9 +8,11 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    // following user profile
     if (this.props.match.params.id !== undefined) {
       this.props.fetchUser(this.props.match.params.id);
     } else {
+      // current user profile
       this.props.fetchUser(this.props.currentUser.id);
     }
   }
@@ -41,7 +43,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { posts, logout } = this.props;
+    const { posts, logout, deletePost } = this.props;
     let user;
     if (this.props.match.params.id !== undefined) {
       user = this.props.user;
@@ -49,10 +51,12 @@ class Profile extends React.Component {
       user = this.props.currentUser;
     }
 
+    let isCurrent = user === this.props.currentUser ? true : false;
+
     if (user === undefined) return null;
     const numFollowers = user.numFollowers ? user.numFollowers : 0;
     const numFollowings = user.numFollowings ? user.numFollowings : 0;
-
+    
     return (
       <div className="profile-container">
         <div className="header">
@@ -81,7 +85,8 @@ class Profile extends React.Component {
           <div className="user-posts">
             {
               posts.map((post) => 
-                <ProfilePost post={post} key={post.id}/>
+                <ProfilePost post={post} key={post.id} 
+                isCurrent={isCurrent} deletePost={isCurrent ? deletePost : ""}/>
               )
             }
           </div>

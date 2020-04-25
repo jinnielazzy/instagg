@@ -22,7 +22,16 @@ const commentsReducer = (state = {}, action) => {
       newState = merge({}, arr);
       return newState;
     case RECEIVE_USER:
-      return {};
+      let comments = {};
+
+      if (action.user.user.posts) {
+        Object.values(action.user.user.posts).forEach(post => {
+          if (post.commentsLength) comments = merge(comments, post.comments);
+        }); 
+      }
+
+      newState = merge(comments, state);
+      return newState;
     case LOGOUT_CURRENT_USER:
       return {};
     default:
